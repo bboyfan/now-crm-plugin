@@ -11,6 +11,9 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       now-crm
  *
+ * Copyright (C) 2026 WENSZU.
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
  * @package NowCRM
  */
 
