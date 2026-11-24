@@ -1,0 +1,28 @@
+{
+	"name": "now-crm",
+	"version": "1.0.0-rc.4",
+	"private": true,
+	"description": "Browser build tooling for the NOW CRM WordPress plugin.",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"build": "wp-scripts build --config webpack.config.js",
+		"start": "wp-scripts start --config webpack.config.js",
+		"check-types": "tsc --noEmit",
+		"test:unit": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON src/cart-track/*.test.ts"
+	},
+	"devDependencies": {
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
+		"@wordpress/api-fetch": "^8.1.0",
+		"@wordpress/components": "^44.0.0",
+		"@wordpress/data": "^11.1.0",
+		"@wordpress/edit-post": "^9.1.0",
+		"@wordpress/editor": "^16.1.0",
+		"@wordpress/element": "^10.1.0",
+		"@wordpress/i18n": "^7.1.0",
+		"@wordpress/notices": "^6.1.0",
+		"@wordpress/plugins": "^8.1.0",
+		"@wordpress/scripts": "^37.1.0",
+		"typescript": "^5.9.3"
+	}
+}

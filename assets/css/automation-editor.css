@@ -1,0 +1,1225 @@
+/**
+ * Automation detail workspace — Executive Monochrome, scoped to .nowcrm-automation.
+ */
+
+.nowcrm-automation {
+	/* Page tokens read the shared NOW values; do not copy admin.css values here. */
+	--nc-ink: var(--nowcrm-ink);
+	--nc-muted: var(--nowcrm-muted);
+	--nc-soft: var(--nowcrm-muted);
+	--nc-line: var(--nowcrm-line);
+	--nc-subtle: var(--nowcrm-line);
+	--nc-surface: var(--nowcrm-surface);
+	--nc-canvas: var(--nowcrm-canvas);
+	--nc-active: var(--nowcrm-success);
+	--nc-paused: #8a6d1f;
+	color: var(--nowcrm-ink);
+	font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+}
+
+.nowcrm-automation *,
+.nowcrm-automation *::before,
+.nowcrm-automation *::after {
+	box-sizing: border-box;
+}
+
+.nowcrm-automation .button {
+	border-radius: 4px;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+.nowcrm-automation .button-primary {
+	background: var(--nc-ink);
+	border-color: var(--nc-ink);
+	color: #ffffff;
+}
+
+.nowcrm-automation .button-primary:hover,
+.nowcrm-automation .button-primary:focus {
+	background: #333333;
+	border-color: #333333;
+	color: #ffffff;
+}
+
+/* Topbar */
+
+.nowcrm-automation__topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin: 8px 0 12px;
+}
+
+.nowcrm-automation__crumbs {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 13px;
+	color: var(--nc-muted);
+}
+
+.nowcrm-automation__crumbs a {
+	color: var(--nc-ink);
+	text-decoration: none;
+}
+
+.nowcrm-automation__crumbs a:hover {
+	text-decoration: underline;
+}
+
+.nowcrm-automation__crumb-sep {
+	color: #c3c4c7;
+}
+
+.nowcrm-automation__topbar-actions {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.nowcrm-automation__inline-form {
+	display: inline-flex;
+	margin: 0;
+}
+
+.nowcrm-automation__status {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	height: 26px;
+	padding: 0 10px;
+	border: 1px solid var(--nc-line);
+	border-radius: 999px;
+	background: var(--nc-surface);
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--nc-soft);
+}
+
+.nowcrm-automation__status-dot {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: currentColor;
+}
+
+.nowcrm-automation__status--active {
+	border-color: #c9efd5;
+	color: var(--nc-active);
+}
+
+.nowcrm-automation__status--paused {
+	border-color: #f0e4c4;
+	color: var(--nc-paused);
+}
+
+.nowcrm-automation__status--draft {
+	color: var(--nc-soft);
+}
+
+.nowcrm-automation__live {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 12px;
+	color: var(--nc-soft);
+}
+
+.nowcrm-automation__live-dot {
+	display: none;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--nc-active);
+	box-shadow: 0 0 0 3px rgba(31, 179, 74, 0.14);
+}
+
+.nowcrm-automation__live.is-live {
+	color: var(--nc-ink);
+}
+
+.nowcrm-automation__live.is-live .nowcrm-automation__live-dot {
+	display: inline-block;
+}
+
+.nowcrm-automation__save-state {
+	font-size: 12px;
+	color: var(--nc-soft);
+}
+
+.nowcrm-automation__save-state.is-dirty {
+	color: var(--nc-paused);
+	font-weight: 600;
+}
+
+/* More menu */
+
+.nowcrm-automation__menu {
+	position: relative;
+}
+
+.nowcrm-automation__menu > summary {
+	list-style: none;
+	cursor: pointer;
+}
+
+.nowcrm-automation__menu > summary::-webkit-details-marker {
+	display: none;
+}
+
+.nowcrm-automation__menu-panel {
+	position: absolute;
+	right: 0;
+	top: calc(100% + 4px);
+	z-index: 20;
+	width: 200px;
+	padding: 6px;
+	background: var(--nc-surface);
+	border: 1px solid var(--nc-line);
+	border-radius: 4px;
+	box-shadow: 0 8px 24px rgba(16, 17, 17, 0.1);
+}
+
+.nowcrm-automation__menu-panel a,
+.nowcrm-automation__menu-panel button {
+	display: block;
+	width: 100%;
+	padding: 6px 8px;
+	border: 0;
+	background: none;
+	text-align: left;
+	font-size: 13px;
+	color: var(--nc-ink);
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+.nowcrm-automation__menu-panel a:hover,
+.nowcrm-automation__menu-panel button:hover {
+	background: var(--nc-canvas);
+}
+
+.nowcrm-automation__menu-panel form {
+	margin: 0;
+}
+
+.nowcrm-automation__menu-panel .button-link-delete {
+	color: #b32d2e;
+}
+
+/* Hero */
+
+.nowcrm-automation__hero {
+	margin: 0 0 12px;
+}
+
+.nowcrm-automation__title {
+	margin: 0 0 4px;
+	padding: 0;
+	font-size: 20px;
+	line-height: 28px;
+	font-weight: 600;
+	letter-spacing: -0.015em;
+	color: var(--nc-ink);
+}
+
+.nowcrm-automation__meta {
+	margin: 0;
+	font-size: 13px;
+	color: var(--nc-muted);
+}
+
+.nowcrm-automation__meta-sep {
+	margin: 0 6px;
+	color: #c3c4c7;
+}
+
+/* Layout */
+
+.nowcrm-automation__layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 320px;
+	gap: 24px;
+	align-items: start;
+	margin-top: 12px;
+}
+
+.nowcrm-automation__canvas {
+	min-width: 0;
+	padding: 16px;
+	background: var(--nc-canvas);
+	border: 1px solid var(--nc-line);
+	border-radius: 4px;
+}
+
+.nowcrm-automation__aside {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	min-width: 0;
+}
+
+/* Trigger card */
+
+.nowcrm-automation__trigger-card {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 14px;
+	margin: 0 0 20px;
+	background: var(--nc-surface);
+	border: 1px solid var(--nc-line);
+	border-radius: 4px;
+}
+
+.nowcrm-automation__trigger-icon {
+	color: var(--nc-soft);
+}
+
+.nowcrm-automation__trigger-main {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.nowcrm-automation__eyebrow {
+	display: block;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--nc-muted);
+}
+
+.nowcrm-automation__trigger-main strong {
+	display: block;
+	margin-top: 2px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.nowcrm-automation__trigger-desc {
+	margin: 4px 0 8px;
+	font-size: 13px;
+	color: var(--nc-muted);
+}
+
+.nowcrm-automation__chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.nowcrm-automation__chip {
+	display: inline-flex;
+	align-items: center;
+	height: 22px;
+	padding: 0 8px;
+	background: var(--nc-canvas);
+	border: 1px solid var(--nc-subtle);
+	border-radius: 999px;
+	font-size: 12px;
+	color: var(--nc-ink);
+}
+
+/* Flow */
+
+.nowcrm-automation__flow {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 0 0 0 14px;
+	padding: 2px 0 2px 22px;
+	border-left: 1px solid var(--nc-line);
+}
+
+.nowcrm-step-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.nowcrm-automation__flow--empty {
+	display: none;
+}
+
+.nowcrm-step-card {
+	position: relative;
+	background: var(--nc-surface);
+	border: 1px solid var(--nc-line);
+	border-radius: 4px;
+}
+
+.nowcrm-automation__flow > .nowcrm-step-card::before {
+	content: "";
+	position: absolute;
+	left: -26px;
+	top: 20px;
+	width: 7px;
+	height: 7px;
+	border: 1px solid var(--nc-line);
+	border-radius: 50%;
+	background: var(--nc-surface);
+}
+
+.nowcrm-step-card.is-editing {
+	border-color: var(--nc-ink);
+}
+
+.nowcrm-step-card--invalid {
+	border-color: #d63638;
+	box-shadow: 0 0 0 1px #d63638;
+}
+
+.nowcrm-step-card__head {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	padding: 4px 4px 4px 0;
+}
+
+.nowcrm-step-card__summary {
+	display: flex;
+	flex: 1 1 auto;
+	align-items: flex-start;
+	gap: 10px;
+	min-width: 0;
+	padding: 8px 4px 8px 12px;
+	border: 0;
+	background: none;
+	text-align: left;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+}
+
+.nowcrm-step-card__summary:hover [data-role="step-title"] {
+	color: #000000;
+}
+
+.nowcrm-step-card__summary:focus-visible {
+	outline: 2px solid var(--nc-ink);
+	outline-offset: -2px;
+}
+
+.nowcrm-step-card__icon {
+	flex: 0 0 auto;
+	color: var(--nc-muted);
+}
+
+.nowcrm-step-card__text {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+}
+
+.nowcrm-step-card__eyebrow {
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--nc-muted);
+}
+
+.nowcrm-step-card__text strong {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	color: var(--nc-ink);
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-step-card__meta {
+	font-size: 12px;
+	color: var(--nc-muted);
+}
+
+.nowcrm-step-card__meta:empty {
+	display: none;
+}
+
+.nowcrm-step-card__actions {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	padding: 8px 8px 0 0;
+}
+
+.nowcrm-step-card__actions .button {
+	min-height: 24px;
+	height: 24px;
+	line-height: 22px;
+	padding: 0 6px;
+	font-size: 12px;
+	background: var(--nc-surface);
+	border-color: var(--nc-subtle);
+	color: var(--nc-ink);
+}
+
+.nowcrm-step-card__actions .button-link-delete {
+	border-color: transparent;
+	background: none;
+	color: #b32d2e;
+}
+
+.nowcrm-step-card__body {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 0 14px 14px;
+	font-size: 13px;
+}
+
+.nowcrm-automation--js .nowcrm-step-card > .nowcrm-step-card__body {
+	display: none;
+}
+
+.nowcrm-step-card__body label,
+.nowcrm-automation__field {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.nowcrm-step-card__body label > span:first-child,
+.nowcrm-automation__field > span:first-child {
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--nc-ink);
+}
+
+.nowcrm-step-card__body input[type="text"],
+.nowcrm-step-card__body input[type="number"],
+.nowcrm-step-card__body select,
+.nowcrm-step-card__body textarea,
+.nowcrm-automation__field input,
+.nowcrm-automation__field select {
+	width: 100%;
+	min-height: 32px;
+	border: 1px solid var(--nc-line);
+	border-radius: 4px;
+	box-shadow: none;
+	font-size: 13px;
+	color: var(--nc-ink);
+	background: var(--nc-surface);
+}
+
+.nowcrm-step-card__body textarea {
+	min-height: 110px;
+}
+
+.nowcrm-step-card__body input:focus,
+.nowcrm-step-card__body select:focus,
+.nowcrm-step-card__body textarea:focus,
+.nowcrm-automation__field input:focus,
+.nowcrm-automation__field select:focus {
+	border-color: var(--nc-ink);
+	box-shadow: none;
+	outline: none;
+}
+
+.nowcrm-step-card__body select[multiple] {
+	min-height: 0;
+	padding: 4px;
+}
+
+.nowcrm-step-card__body .description,
+.nowcrm-automation__panel .description {
+	margin: 0;
+	font-size: 12px;
+	color: var(--nc-muted);
+}
+
+.nowcrm-step-card__body .nowcrm-inline-form {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 10px;
+}
+
+.nowcrm-step-card__body [data-group] {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.nowcrm-step-card__body [data-group][hidden] {
+	display: none;
+}
+
+.nowcrm-duration {
+	display: flex;
+	gap: 6px;
+}
+
+.nowcrm-duration input {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.nowcrm-duration select {
+	flex: 0 0 92px;
+	width: 92px;
+}
+
+.nowcrm-split-weights {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.nowcrm-split-weights label {
+	flex: 1 1 140px;
+}
+
+/* Branches */
+
+.nowcrm-branch {
+	margin-top: 4px;
+	padding: 10px;
+	background: var(--nc-canvas);
+	border: 1px solid var(--nc-subtle);
+	border-radius: 4px;
+}
+
+.nowcrm-branch__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
+.nowcrm-branch__head strong {
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--nc-ink);
+}
+
+.nowcrm-branch .nowcrm-step-list {
+	margin-top: 8px;
+}
+
+/* Condition builder */
+
+.nowcrm-condition-group {
+	margin: 0 0 8px;
+	padding: 10px;
+	border: 1px solid var(--nc-line);
+	border-radius: 4px;
+	background: var(--nc-surface);
+}
+
+.nowcrm-condition-group legend {
+	padding: 0 4px;
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--nc-muted);
+}
+
+.nowcrm-condition-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
+.nowcrm-condition-row label {
+	flex: 1 1 130px;
+}
+
+.nowcrm-condition-row--invalid select,
+.nowcrm-condition-row--invalid input {
+	border-color: #d63638;
+}
+
+.nowcrm-condition-or {
+	margin: 6px 0 10px;
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--nc-muted);
+}
+
+.nowcrm-condition-error {
+	color: #d63638;
+}
+
+.nowcrm-condition-json {
+	margin-top: 8px;
+}
+
+.nowcrm-condition-json summary {
+	cursor: pointer;
+	font-size: 12px;
+	color: var(--nc-muted);
+}
+
+/* Add step button */
+
+.nowcrm-automation__add {
+	display: block;
+	width: 100%;
+	margin: 12px 0 0;
+	padding: 10px;
+	background: var(--nc-surface);
+	border: 1px dashed #c3c4c7;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--nc-ink);
+	cursor: pointer;
+}
+
+.nowcrm-automation__add:hover {
+	border-color: var(--nc-ink);
+	background: #ffffff;
+}
+
+/* Aside panels */
+
+.nowcrm-automation__panel {
+	padding: 14px;
+	background: var(--nc-surface);
+	border: 1px solid var(--nc-line);
+	border-radius: 4px;
+}
+
+.nowcrm-automation__panel h2 {
+	margin: 0 0 10px;
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--nc-ink);
+}
+
+.nowcrm-automation__panel-head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+
+.nowcrm-automation__panel-head h2 {
+	margin: 0;
+}
+
+.nowcrm-automation__panel-head a {
+	font-size: 12px;
+	color: var(--nc-muted);
+	text-decoration: none;
+}
+
+.nowcrm-automation__panel-head a:hover {
+	color: var(--nc-ink);
+	text-decoration: underline;
+}
+
+.nowcrm-automation__metrics {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 8px;
+}
+
+.nowcrm-automation__metric {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	padding: 10px;
+	border: 1px solid var(--nc-subtle);
+	border-radius: 4px;
+	text-decoration: none;
+	color: var(--nc-ink);
+	background: var(--nc-canvas);
+}
+
+.nowcrm-automation__metric:hover {
+	border-color: #c3c4c7;
+	background: #ffffff;
+}
+
+.nowcrm-automation__metric-value {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 24px;
+	font-variant-numeric: tabular-nums;
+}
+
+.nowcrm-automation__metric-label {
+	font-size: 12px;
+	color: var(--nc-muted);
+}
+
+#nowcrm-automation-settings {
+	scroll-margin-top: 40px;
+}
+
+#nowcrm-automation-settings h2 {
+	margin-bottom: 12px;
+}
+
+.nowcrm-automation__entry {
+	margin: 12px 0 0;
+	padding: 10px 0 0;
+	border: 0;
+	border-top: 1px solid var(--nc-subtle);
+}
+
+.nowcrm-automation__entry legend {
+	padding: 0;
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--nc-muted);
+}
+
+.nowcrm-automation__entry label {
+	display: flex;
+	align-items: flex-start;
+	gap: 6px;
+	margin: 6px 0;
+	font-size: 12px;
+	line-height: 18px;
+	color: var(--nc-ink);
+}
+
+.nowcrm-automation__filters {
+	margin-top: 14px;
+	padding-top: 12px;
+	border-top: 1px solid var(--nc-subtle);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.nowcrm-automation__filters h3 {
+	margin: 0;
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--nc-muted);
+}
+
+.nowcrm-automation__filters .nowcrm-automation__field {
+	margin: 0;
+}
+
+/* Picker dialog */
+
+.nowcrm-automation-picker {
+	width: min(760px, calc(100vw - 32px));
+	max-height: calc(100vh - 64px);
+	padding: 20px;
+	background: var(--nc-surface);
+	border: 1px solid var(--nc-line);
+	border-radius: 6px;
+	box-shadow: 0 18px 48px rgba(16, 17, 17, 0.16);
+	color: var(--nc-ink);
+	font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+}
+
+.nowcrm-automation-picker::backdrop {
+	background: rgba(16, 17, 17, 0.35);
+}
+
+.nowcrm-automation-picker__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.nowcrm-automation-picker__head h2 {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.nowcrm-automation-picker__group {
+	margin-bottom: 16px;
+}
+
+.nowcrm-automation-picker__group:last-child {
+	margin-bottom: 0;
+}
+
+.nowcrm-automation-picker__group h3 {
+	margin: 0 0 8px;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--nc-muted);
+}
+
+.nowcrm-automation-picker__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 8px;
+}
+
+.nowcrm-automation-picker__card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 4px;
+	padding: 12px;
+	background: var(--nc-canvas);
+	border: 1px solid var(--nc-subtle);
+	border-radius: 4px;
+	text-align: left;
+	color: var(--nc-ink);
+	font: inherit;
+	cursor: pointer;
+}
+
+.nowcrm-automation-picker__card:hover,
+.nowcrm-automation-picker__card:focus-visible {
+	border-color: var(--nc-ink);
+	background: #ffffff;
+	outline: none;
+}
+
+.nowcrm-automation-picker__card .dashicons {
+	color: var(--nc-muted);
+}
+
+.nowcrm-automation-picker__card strong {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.nowcrm-automation-picker__card > span:last-child {
+	font-size: 12px;
+	color: var(--nc-muted);
+}
+
+/* Drawer (native dialog; sizing comes from .nowcrm-drawer + scoped overrides) */
+
+.nowcrm-automation-drawer__panel {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: min(480px, 100vw);
+	height: 100%;
+	background: var(--nc-surface);
+	box-shadow: -8px 0 32px rgba(16, 17, 17, 0.12);
+	color: var(--nc-ink);
+	font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+}
+
+.nowcrm-automation-drawer__head {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 16px 20px;
+	border-bottom: 1px solid var(--nc-line);
+}
+
+.nowcrm-automation-drawer__head h2 {
+	margin: 2px 0 0;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 22px;
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-automation-drawer__body {
+	flex: 1 1 auto;
+	overflow-y: auto;
+	padding: 16px 20px;
+}
+
+.nowcrm-automation-drawer__body > .nowcrm-step-card__body {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 0;
+	font-size: 13px;
+}
+
+.nowcrm-automation-drawer__hint {
+	margin: 0;
+	padding: 9px 20px;
+	border-top: 1px solid var(--nc-subtle);
+	background: var(--nc-canvas);
+	font-size: 11px;
+	line-height: 16px;
+	color: var(--nc-muted);
+}
+
+.nowcrm-automation-drawer__foot {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	padding: 12px 20px;
+	border-top: 1px solid var(--nc-line);
+	background: var(--nc-surface);
+}
+
+body.nowcrm-automation-drawer-open {
+	overflow: hidden;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+	.nowcrm-automation__layout {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.nowcrm-automation__aside {
+		order: 2;
+	}
+}
+
+@media (max-width: 640px) {
+	.nowcrm-automation__topbar {
+		align-items: flex-start;
+	}
+
+	.nowcrm-automation__topbar-actions {
+		width: 100%;
+	}
+
+	.nowcrm-automation__hero .nowcrm-automation__title {
+		font-size: 22px;
+		line-height: 30px;
+	}
+
+	.nowcrm-automation__canvas {
+		padding: 12px;
+	}
+
+	.nowcrm-automation__flow {
+		margin-left: 8px;
+		padding-left: 14px;
+	}
+
+	.nowcrm-automation__flow > .nowcrm-step-card::before {
+		left: -18px;
+	}
+
+	.nowcrm-automation-picker {
+		width: 100vw;
+		max-height: 100vh;
+		border-radius: 0;
+	}
+
+	.nowcrm-automation-drawer__panel {
+		width: 100vw;
+	}
+}
+
+/* Trigger filter groups, validation and reachability */
+
+.nowcrm-automation__filter-group {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.nowcrm-automation__filter-group[hidden],
+.nowcrm-automation__chips[hidden],
+.nowcrm-automation__filters [hidden],
+.nowcrm-automation__flow-empty[hidden],
+.nowcrm-automation__field-error[hidden],
+.nowcrm-step-card__error[hidden],
+.nowcrm-step-card__flag[hidden],
+.nowcrm-condition-modes [hidden],
+.nowcrm-automation-picker__card[hidden],
+.nowcrm-automation-picker__group[hidden],
+.nowcrm-automation-picker__empty[hidden] {
+	display: none;
+}
+
+.nowcrm-automation__field-error {
+	font-size: 12px;
+	line-height: 18px;
+	color: #ba1a1a;
+}
+
+.nowcrm-automation__flow-empty {
+	margin: 0 0 0 14px;
+	padding: 12px 14px;
+	border: 1px dashed var(--nowcrm-line);
+	border-radius: 4px;
+	background: var(--nowcrm-surface);
+	font-size: 13px;
+	color: var(--nowcrm-muted);
+}
+
+.nowcrm-step-card__flag {
+	font-size: 12px;
+	line-height: 18px;
+	color: var(--nowcrm-muted);
+}
+
+.nowcrm-step-card.is-unreachable {
+	border-style: dashed;
+	opacity: 0.6;
+}
+
+.nowcrm-step-card.is-unreachable .nowcrm-step-card__flag {
+	color: #8a6d1f;
+}
+
+.nowcrm-step-card__error {
+	margin: 0;
+	padding: 8px 10px;
+	border: 1px solid #f0c8cb;
+	border-radius: 4px;
+	background: #fcf4f4;
+	font-size: 12px;
+	line-height: 18px;
+	color: #ba1a1a;
+}
+
+/* Condition ownership */
+
+.nowcrm-condition-modes {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.nowcrm-condition-mode {
+	display: inline-flex;
+	align-items: center;
+	height: 22px;
+	padding: 0 8px;
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 999px;
+	background: var(--nowcrm-canvas);
+	font-size: 11px;
+	font-weight: 600;
+	color: var(--nowcrm-muted);
+}
+
+.nowcrm-condition-mode.is-json {
+	color: var(--nowcrm-ink);
+	border-color: var(--nowcrm-ink);
+}
+
+.nowcrm-condition-builder.is-disabled {
+	opacity: 0.5;
+}
+
+/* Picker search */
+
+.nowcrm-automation-picker__search {
+	margin: 0 0 12px;
+}
+
+.nowcrm-automation-picker__search input {
+	width: 100%;
+	min-height: 32px;
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 4px;
+	font-size: 13px;
+	color: var(--nowcrm-ink);
+	background: var(--nowcrm-surface);
+}
+
+.nowcrm-automation-picker__search input:focus {
+	border-color: var(--nowcrm-ink);
+	outline: none;
+	box-shadow: none;
+}
+
+.nowcrm-automation-picker__empty {
+	margin: 0 0 16px;
+	padding: 12px;
+	border: 1px dashed var(--nowcrm-line);
+	border-radius: 4px;
+	font-size: 13px;
+	color: var(--nowcrm-muted);
+}
+
+/* Native dialog drawer */
+
+.nowcrm-wrap .nowcrm-automation-drawer[open] {
+	display: block;
+	padding: 0;
+	border-left: 1px solid var(--nowcrm-line);
+	overflow: hidden;
+}
+
+.nowcrm-automation-drawer__panel {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	min-height: 0;
+	overflow: hidden;
+}
+
+.nowcrm-wrap .nowcrm-automation-drawer__head {
+	align-items: flex-start;
+	padding: 16px 20px;
+	border-bottom: 1px solid var(--nowcrm-line);
+}
+
+.nowcrm-automation-drawer__heading {
+	min-width: 0;
+}
+
+.nowcrm-automation-drawer__nav {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	flex: 0 0 auto;
+}
+
+.nowcrm-wrap .nowcrm-automation-drawer__hint {
+	margin: 0;
+	padding: 9px 20px;
+	border-top: 1px solid var(--nowcrm-line);
+	background: var(--nowcrm-canvas);
+	font-size: 11px;
+	line-height: 16px;
+	color: var(--nowcrm-muted);
+}
+
+.nowcrm-wrap .nowcrm-automation-drawer__foot {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	padding: 12px 20px;
+	background: var(--nowcrm-surface);
+	border-top: 1px solid var(--nowcrm-line);
+}
+
+.nowcrm-wrap .nowcrm-automation-drawer .nowcrm-drawer__body {
+	padding: 20px;
+	overflow-y: auto;
+}
+
+/* Neutral statuses: only the dot carries state colour. */
+
+.nowcrm-automation__status--active,
+.nowcrm-automation__status--paused {
+	border-color: var(--nowcrm-line);
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-automation__status--active .nowcrm-automation__status-dot {
+	background: var(--nowcrm-success);
+}
+
+.nowcrm-automation__status--paused .nowcrm-automation__status-dot {
+	background: #b08a2e;
+}
+
+.nowcrm-automation__status--draft .nowcrm-automation__status-dot {
+	background: var(--nowcrm-muted);
+}

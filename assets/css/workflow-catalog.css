@@ -1,0 +1,407 @@
+/**
+ * Workflow catalog: dense list shared by campaigns, templates, automations,
+ * and sequences. Executive Monochrome tokens come from admin.css.
+ */
+
+.nowcrm-wrap.nowcrm-catalog {
+	margin-right: 20px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin: 12px 0 16px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__head h1 {
+	margin: 0;
+	padding: 0;
+	color: var(--nowcrm-ink);
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	line-height: 32px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__summary {
+	margin: 2px 0 0;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin: 0 0 12px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__tab {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	min-height: 28px;
+	padding: 0 10px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: var(--nowcrm-muted);
+	font-size: 13px;
+	line-height: 16px;
+	text-decoration: none;
+}
+
+.nowcrm-catalog .nowcrm-catalog__tab:hover {
+	background: #f5f5f5;
+	border-color: var(--nowcrm-line);
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-catalog .nowcrm-catalog__tab.is-current {
+	background: var(--nowcrm-ink);
+	border-color: var(--nowcrm-ink);
+	color: #ffffff;
+}
+
+.nowcrm-catalog .nowcrm-catalog__tab-count {
+	font-size: 11px;
+	font-variant-numeric: tabular-nums;
+	opacity: 0.72;
+}
+
+.nowcrm-catalog .nowcrm-catalog__search {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+	margin: 0 0 12px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__search input[type="search"] {
+	width: 260px;
+	max-width: 100%;
+	min-height: 32px;
+	margin: 0;
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 4px;
+	background: #ffffff;
+}
+
+.nowcrm-catalog .nowcrm-catalog__clear {
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__surface {
+	background: var(--nowcrm-surface);
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.nowcrm-catalog .nowcrm-catalog__scroll {
+	overflow-x: auto;
+}
+
+.nowcrm-catalog .nowcrm-catalog__table {
+	width: 100%;
+	min-width: 720px;
+	border-collapse: collapse;
+	color: var(--nowcrm-ink);
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__table th,
+.nowcrm-catalog .nowcrm-catalog__table td {
+	padding: 10px 12px;
+	border: 0;
+	border-bottom: 1px solid #ededed;
+	text-align: left;
+	vertical-align: top;
+}
+
+.nowcrm-catalog .nowcrm-catalog__table thead th {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background: var(--nowcrm-canvas);
+	color: var(--nowcrm-muted);
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	line-height: 16px;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.nowcrm-catalog .nowcrm-catalog__table tbody tr {
+	transition: background-color var(--nowcrm-duration-hover) ease;
+}
+
+.nowcrm-catalog .nowcrm-catalog__table tbody tr:hover {
+	background: #f5f5f5;
+}
+
+.nowcrm-catalog .nowcrm-catalog__table tbody tr:last-child th,
+.nowcrm-catalog .nowcrm-catalog__table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.nowcrm-catalog .nowcrm-catalog__table .num {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.nowcrm-catalog .nowcrm-catalog__col-check {
+	width: 36px;
+	padding-right: 0;
+	padding-top: 12px;
+	text-align: center;
+}
+
+.nowcrm-catalog .nowcrm-catalog__col-check input[type="checkbox"] {
+	width: 14px;
+	height: 14px;
+	margin: 0;
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 2px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__col-check input[type="checkbox"]:checked {
+	background: var(--nowcrm-ink);
+	border-color: var(--nowcrm-ink);
+}
+
+.nowcrm-catalog .nowcrm-catalog__col-check input[type="checkbox"]:checked::before {
+	color: #ffffff;
+}
+
+.nowcrm-catalog .nowcrm-catalog__col-main {
+	width: 44%;
+}
+
+.nowcrm-catalog .nowcrm-catalog__col-status,
+.nowcrm-catalog .nowcrm-catalog__col-time {
+	white-space: nowrap;
+}
+
+.nowcrm-catalog .nowcrm-catalog__link {
+	color: var(--nowcrm-ink);
+	font-weight: 500;
+	text-decoration: none;
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-catalog .nowcrm-catalog__link:hover {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 6px;
+	margin-top: 2px;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__separator {
+	color: #c4c7c7;
+}
+
+.nowcrm-catalog .nowcrm-catalog__row-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+	margin-top: 4px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__row-form {
+	display: inline-flex;
+	margin: 0;
+}
+
+.nowcrm-catalog .nowcrm-catalog__row-action {
+	padding: 0;
+	background: none;
+	border: 0;
+	color: #444748;
+	font: inherit;
+	font-size: 12px;
+	line-height: 16px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.nowcrm-catalog .nowcrm-catalog__row-action:hover {
+	color: var(--nowcrm-ink);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__row-action--danger:hover {
+	color: #b32d2e;
+}
+
+.nowcrm-catalog .nowcrm-catalog__muted {
+	color: var(--nowcrm-muted);
+}
+
+.nowcrm-catalog .nowcrm-catalog__number {
+	color: var(--nowcrm-ink);
+	font-variant-numeric: tabular-nums;
+	text-decoration: none;
+}
+
+.nowcrm-catalog .nowcrm-catalog__time {
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+
+.nowcrm-catalog .nowcrm-catalog__aside {
+	display: block;
+	margin-top: 2px;
+	color: var(--nowcrm-muted);
+	font-size: 11px;
+	line-height: 14px;
+	font-variant-numeric: tabular-nums;
+}
+
+.nowcrm-catalog .nowcrm-catalog__footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 10px 12px;
+	border-top: 1px solid var(--nowcrm-line);
+}
+
+.nowcrm-catalog .nowcrm-catalog__range {
+	margin: 0;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__empty {
+	margin: 16px 0;
+	padding: 24px 16px;
+	background: var(--nowcrm-surface);
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 4px;
+	color: var(--nowcrm-muted);
+	font-size: 14px;
+	text-align: center;
+}
+
+.nowcrm-catalog .nowcrm-catalog__empty p {
+	margin: 0 0 8px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__bulk {
+	position: fixed;
+	right: 24px;
+	bottom: 24px;
+	left: 184px;
+	z-index: 100;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: flex-end;
+	padding: 12px 14px;
+	background: var(--nowcrm-surface);
+	border: 1px solid #d4d4d4;
+	border-radius: 4px;
+	box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.nowcrm-catalog .nowcrm-catalog__bulk[hidden] {
+	display: none;
+}
+
+.nowcrm-catalog .nowcrm-catalog__bulk-head {
+	display: flex;
+	flex: 1 1 100%;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	font-size: 13px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__bulk-close {
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	background: none;
+	border: 0;
+	border-radius: 4px;
+	color: var(--nowcrm-muted);
+	font-size: 18px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.nowcrm-catalog .nowcrm-catalog__bulk-close:hover {
+	background: #f5f5f5;
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-catalog .nowcrm-catalog__bulk-link {
+	padding: 0;
+	background: none;
+	border: 0;
+	color: var(--nowcrm-ink);
+	font-size: 12px;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	cursor: pointer;
+}
+
+.nowcrm-catalog .nowcrm-catalog__bulk-scope {
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__bulk-fields {
+	display: flex;
+	flex: 1 1 100%;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 10px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__bulk-fields > label {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	min-width: 150px;
+	font-size: 12px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__bulk-fields select {
+	min-height: 32px;
+	margin: 0;
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 4px;
+}
+
+.nowcrm-catalog .nowcrm-catalog__bulk-note {
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+}
+
+@media (max-width: 960px) {
+	.nowcrm-catalog .nowcrm-catalog__bulk {
+		left: 24px;
+	}
+}

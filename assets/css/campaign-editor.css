@@ -1,0 +1,1003 @@
+.nowcrm-workspace {
+	width: 100%;
+	font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-size: 14px;
+	color: #1a1a1a;
+}
+
+.nowcrm-workspace-wrap {
+	width: 100%;
+	max-width: none;
+}
+
+.nowcrm-workspace__header,
+.nowcrm-workspace__steps,
+.nowcrm-workspace__panel,
+.nowcrm-workspace__footer {
+	margin-block: 16px;
+}
+
+.nowcrm-workspace__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px 20px;
+}
+
+.nowcrm-workspace__heading {
+	display: grid;
+	flex: 1 1 420px;
+	gap: 6px;
+	min-width: 0;
+}
+
+.nowcrm-workspace__header .nowcrm-workspace__actions {
+	margin-left: auto;
+}
+
+.nowcrm-workspace__title,
+.nowcrm-workspace__actions,
+.nowcrm-workspace__footer,
+.nowcrm-workspace__body-heading {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 12px;
+}
+
+.nowcrm-workspace__title h1 {
+	margin: 0;
+	padding: 0;
+	font-size: clamp(26px, 3vw, 32px);
+	font-weight: 600;
+	line-height: 1.25;
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-workspace__meta {
+	margin: 0;
+	color: #646970;
+}
+
+.nowcrm-workspace .nowcrm-status-pill--active {
+	background: #ecfdf3;
+	border-color: #abefc6;
+	color: #067647;
+}
+
+.nowcrm-workspace .nowcrm-status-pill--paused {
+	background: #fffaeb;
+	border-color: #fedf89;
+	color: #b54708;
+}
+
+.nowcrm-workspace .nowcrm-status-pill--inactive {
+	background: #f5f7fa;
+	border-color: #e1e4ea;
+	color: #525866;
+}
+
+.nowcrm-workspace__schedule {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	align-items: end;
+	gap: 12px 16px;
+	margin-bottom: 12px;
+}
+
+.nowcrm-workspace__schedule .nowcrm-workspace__field {
+	margin-bottom: 0;
+}
+
+.nowcrm-workspace__schedule :is(select, input[type="time"], input[type="number"]) {
+	width: 100%;
+}
+
+.nowcrm-workspace__schedule .nowcrm-workspace__actions {
+	grid-column: 1 / -1;
+}
+
+.nowcrm-workspace__check {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 500;
+}
+
+.nowcrm-workspace__schedule-actions {
+	margin-block: 12px;
+}
+
+.nowcrm-workspace__table-scroll {
+	overflow-x: auto;
+}
+
+.nowcrm-workspace__steps {
+	display: flex;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.nowcrm-workspace__steps button {
+	flex: 0 1 auto;
+	padding: 10px 16px;
+	border: 0;
+	border-bottom: 2px solid transparent;
+	background: transparent;
+	color: #494949;
+	cursor: pointer;
+	font: inherit;
+}
+
+.nowcrm-workspace__steps [aria-current] {
+	border-color: #1a1a1a;
+	color: #1a1a1a;
+	font-weight: 600;
+}
+
+.nowcrm-workspace__steps button:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: -3px;
+}
+
+.nowcrm-workspace__panel {
+	padding: 20px;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+	background: #fff;
+}
+
+.nowcrm-workspace__panel h2 {
+	margin: 0 0 16px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.nowcrm-workspace__body-heading,
+.nowcrm-workspace__footer {
+	justify-content: space-between;
+}
+
+.nowcrm-workspace__content-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: end;
+	justify-content: space-between;
+	gap: 10px 20px;
+	margin-bottom: 8px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+/* The step tab already says 內容; keep the heading for focus, not for space. */
+.nowcrm-workspace__panel--content > h2 {
+	margin: 0 0 8px;
+	font-size: 18px;
+}
+
+.nowcrm-workspace__title-field {
+	flex: 1 1 320px;
+	max-width: 560px;
+	margin: 0;
+}
+
+.nowcrm-workspace__mode {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: end;
+	gap: 8px;
+}
+
+.nowcrm-workspace__mode-select {
+	display: grid;
+	gap: 4px;
+	font-weight: 500;
+}
+
+.nowcrm-workspace__preview-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.nowcrm-workspace__field {
+	display: grid;
+	gap: 4px;
+	max-width: 620px;
+	margin-block: 0 12px;
+	font-weight: 500;
+}
+
+.nowcrm-workspace__field :is(input, textarea) {
+	width: 100%;
+}
+
+.nowcrm-workspace :is(details, fieldset) {
+	margin-block: 16px;
+}
+
+.nowcrm-workspace details {
+	padding-block: 12px 0;
+	border-top: 1px solid #e5e5e5;
+}
+
+.nowcrm-workspace summary {
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.nowcrm-workspace__fields {
+	display: grid;
+	gap: 4px;
+	margin-top: 12px;
+}
+
+.nowcrm-workspace__html {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 280px;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+	background: #fff;
+}
+
+.nowcrm-workspace__html--full {
+	min-height: clamp(420px, calc(100vh - 360px), 900px);
+	padding: 12px;
+	font-family: "JetBrains Mono", monospace;
+	font-size: 13px;
+	line-height: 1.55;
+	resize: vertical;
+}
+
+.nowcrm-workspace__html-field {
+	max-width: none;
+}
+
+/* Raw HTML behaves like a code editor: source on the left, rendered mail on
+   the right. CodeMirror is core's wp.codeEditor, so no second editor ships. */
+.nowcrm-workspace__html-split {
+	display: grid;
+	grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+	gap: 16px;
+	align-items: stretch;
+	margin-block: 10px 12px;
+}
+
+.nowcrm-workspace__html-source {
+	display: grid;
+	gap: 4px;
+	min-width: 0;
+}
+
+.nowcrm-workspace__html-label {
+	font-weight: 500;
+}
+
+.nowcrm-workspace__html-split .CodeMirror {
+	box-sizing: border-box;
+	height: clamp(520px, 72vh, 900px);
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+	font-family: "JetBrains Mono", Menlo, Consolas, monospace;
+	font-size: 13px;
+	line-height: 1.55;
+}
+
+.nowcrm-workspace__html-split .CodeMirror-gutters {
+	border-right: 1px solid #e5e5e5;
+	background: #f6f7f7;
+}
+
+.nowcrm-workspace__html-split textarea.nowcrm-workspace__html--full {
+	min-height: clamp(520px, 72vh, 900px);
+}
+
+.nowcrm-workspace__html-preview {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	gap: 8px;
+	min-width: 0;
+	padding: 10px;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+	background: #f6f7f7;
+}
+
+.nowcrm-workspace__html-preview-head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 8px;
+}
+
+.nowcrm-workspace__html-preview-head span {
+	font-size: 12px;
+	color: #646970;
+}
+
+.nowcrm-workspace__html-preview iframe {
+	width: 100%;
+	height: clamp(480px, 68vh, 860px);
+	border: 1px solid #e5e5e5;
+	background: #fff;
+}
+
+.nowcrm-workspace__html-preview-empty {
+	margin: 0;
+	padding: 16px;
+	color: #646970;
+	text-align: center;
+}
+
+@media (max-width: 1100px) {
+	.nowcrm-workspace__html-split {
+		grid-template-columns: 1fr;
+	}
+
+	.nowcrm-workspace__html-preview iframe {
+		height: 420px;
+	}
+}
+
+.nowcrm-workspace__html {
+	padding: 12px;
+	font-family: "JetBrains Mono", monospace;
+}
+
+.nowcrm-workspace__footer--recipients {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 800px;
+	margin-inline: auto;
+}
+
+.nowcrm-recipients {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 800px;
+	margin-inline: auto;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.nowcrm-recipients > h2 {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+
+.nowcrm-recipients .nowcrm-recipients__sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+
+.nowcrm-recipients h3 {
+	margin: 0 0 4px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.nowcrm-recipients .description {
+	margin-block: 4px 10px;
+	color: #525866;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.nowcrm-recipients fieldset.nowcrm-recipients__modes {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	gap: 0 24px;
+	margin: 0 0 16px;
+	padding: 0;
+	border: 0;
+	border-bottom: 1px solid #e1e4ea;
+}
+
+.nowcrm-recipients__mode {
+	position: relative;
+	display: inline-flex;
+	align-items: stretch;
+	min-width: 0;
+	margin: 0;
+	cursor: pointer;
+}
+
+.nowcrm-recipients__mode input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+
+.nowcrm-recipients__mode span {
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	min-height: 34px;
+	padding: 6px 0 12px;
+	border-bottom: 2px solid transparent;
+	color: #525866;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1;
+}
+
+.nowcrm-recipients__mode input:checked + span {
+	border-bottom-color: #222530;
+	color: #222530;
+}
+
+.nowcrm-recipients__mode input:focus-visible + span {
+	outline: 2px solid #222530;
+	outline-offset: 2px;
+}
+
+.nowcrm-recipients__mode input:disabled + span {
+	color: #a7aaad;
+	cursor: not-allowed;
+}
+
+.nowcrm-recipients__audience-block {
+	margin-block: 16px;
+}
+
+.nowcrm-recipients__rules {
+	margin-block: 16px;
+	padding: 12px;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+}
+
+.nowcrm-recipients__rules legend {
+	font-weight: 600;
+}
+
+.nowcrm-recipients__rule-section {
+	margin-block: 8px;
+}
+
+.nowcrm-recipients__rule-table {
+	width: 100%;
+	border: 1px solid #e1e4ea;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 8px;
+	table-layout: fixed;
+}
+
+.nowcrm-recipients__rule-table th {
+	padding: 8px 12px 8px 16px;
+	border-bottom: 1px solid #e1e4ea;
+	background: #f5f7fa;
+	color: #525866;
+	font-size: 14px;
+	font-weight: 500;
+	text-align: left;
+}
+
+.nowcrm-recipients__rule-table th:first-child {
+	border-top-left-radius: 8px;
+}
+
+.nowcrm-recipients__rule-table th:last-child {
+	border-top-right-radius: 8px;
+}
+
+.nowcrm-recipients__rule-table td {
+	padding: 8px 12px 8px 16px;
+	vertical-align: middle;
+}
+
+.nowcrm-recipients__rule-table > tbody > tr:not(.nowcrm-recipients__rule-note) {
+	height: 64px;
+}
+
+.nowcrm-recipients__rule-table > tbody > tr:not(.nowcrm-recipients__rule-note) + tr:not(.nowcrm-recipients__rule-note) td {
+	border-top: 1px solid #e1e4ea;
+}
+
+.nowcrm-recipients__rule-table th.nowcrm-recipients__rule-action,
+.nowcrm-recipients__rule-table td.nowcrm-recipients__rule-action {
+	width: 52px;
+	padding: 8px;
+	text-align: center;
+}
+
+.nowcrm-recipients__rule-table td.nowcrm-recipients__rule-action .components-button {
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border-radius: 6px;
+	color: #525866;
+}
+
+.nowcrm-recipients__rule-table td.nowcrm-recipients__rule-action .components-button:hover:not(:disabled) {
+	background: #f5f7fa;
+	color: #b32d2e;
+}
+
+.nowcrm-recipients__rule-table .components-base-control {
+	margin-bottom: 0;
+}
+
+.nowcrm-recipients__rule-table :is(input[type="text"], input[type="search"], .components-combobox-control__input) {
+	min-height: 36px;
+	border-color: #e1e4ea;
+	border-radius: 8px;
+}
+
+.nowcrm-recipients__rule-note td {
+	width: auto;
+	padding: 0 16px 10px;
+	border-top: 0;
+	text-align: left;
+}
+
+.nowcrm-recipients__rule-note .description {
+	margin: 0;
+}
+
+.nowcrm-recipients__rule-foot {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px 12px;
+	margin-top: 10px;
+}
+
+.nowcrm-recipients__rule-toolbar .components-button.is-tertiary {
+	margin-left: auto;
+	color: #6b7280;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+.nowcrm-recipients__rule-toolbar .components-button.is-tertiary:hover:not(:disabled) {
+	color: #222530;
+}
+
+.nowcrm-recipients .nowcrm-recipients__rule-foot .components-button.is-secondary {
+	border-color: #e1e4ea;
+	color: #222530;
+}
+
+.nowcrm-recipients__or {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 8px 0;
+	color: #50575e;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.nowcrm-recipients__or::before,
+.nowcrm-recipients__or::after {
+	height: 1px;
+	flex: 1;
+	background: #dcdcde;
+	content: "";
+}
+
+.nowcrm-recipients__and {
+	margin: 0 0 8px;
+	color: #525866;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.nowcrm-recipients__or-action {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 12px 0;
+}
+
+.nowcrm-recipients__or-rule {
+	height: 1px;
+	flex: 1;
+	background: #e1e4ea;
+}
+
+.nowcrm-recipients__or-action .components-button {
+	color: #525866;
+}
+
+.nowcrm-recipients__filter-actions,
+.nowcrm-recipients__filter-submit {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 12px;
+}
+
+.nowcrm-recipients__filter-actions {
+	justify-content: flex-end;
+	margin-block: 12px 8px;
+}
+
+.nowcrm-recipients fieldset.nowcrm-recipients__group {
+	padding: 12px;
+	border: 1px solid #e1e4ea;
+	border-radius: 8px;
+	margin-bottom: 12px;
+	background: #fbfbfb;
+}
+
+.nowcrm-recipients fieldset.nowcrm-recipients__group--virtual {
+	border-style: dashed;
+}
+
+.nowcrm-recipients__group legend {
+	font-weight: 600;
+}
+
+.nowcrm-recipients__condition {
+	padding: 10px;
+	border: 1px dashed #cfcfcf;
+	border-radius: 4px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+
+.nowcrm-recipients__condition-fields {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 8px 12px;
+	margin-bottom: 8px;
+}
+
+.nowcrm-recipients__condition-value {
+	grid-column: 1 / -1;
+}
+
+.nowcrm-recipients__checks {
+	display: grid;
+	gap: 4px;
+	max-height: 220px;
+	overflow: auto;
+	padding: 8px;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+	margin-top: 8px;
+	background: #fff;
+}
+
+.nowcrm-recipients__tokens {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin: 0 0 8px;
+	padding: 0;
+	list-style: none;
+}
+
+.nowcrm-recipients__tokens li {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 2px 4px 2px 10px;
+	border: 1px solid #e5e5e5;
+	border-radius: 999px;
+	background: #f3f3f3;
+}
+
+.nowcrm-recipients__warning {
+	padding: 8px 10px;
+	border-left: 3px solid #b32d2e;
+	background: #fcf0f1;
+	color: #1a1a1a;
+}
+
+.nowcrm-recipients__estimate {
+	margin-top: 20px;
+	padding-top: 16px;
+	border-top: 1px solid #e1e4ea;
+}
+
+.nowcrm-recipients__estimate-line {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 6px 8px;
+	color: #525866;
+	font-size: 16.9px;
+	font-weight: 500;
+	line-height: 1.4;
+	text-align: center;
+}
+
+.nowcrm-recipients__estimate-line .components-button {
+	font-size: 14px;
+}
+
+.nowcrm-recipients__badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 24px;
+	padding: 2px 4px;
+	border-radius: 4px;
+	background: #e1e4ea;
+	color: #222530;
+	font-size: 16.9px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.nowcrm-recipients__badge--pending {
+	background: transparent;
+	color: #525866;
+}
+
+.nowcrm-recipients__estimate .nowcrm-recipients__estimate-note {
+	margin: 6px 0 0;
+	text-align: center;
+}
+
+.nowcrm-recipients__estimate-error {
+	color: #b32d2e;
+}
+
+.nowcrm-recipients__warning .components-button {
+	margin-left: 8px;
+}
+
+.nowcrm-recipients details.nowcrm-recipients__exclude {
+	margin-block: 16px;
+	padding-block: 12px;
+	border-top: 1px solid #e1e4ea;
+}
+
+.nowcrm-recipients__exclude summary {
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.nowcrm-recipients__exclude[open] summary {
+	margin-bottom: 4px;
+}
+
+@media (max-width: 782px) {
+	.nowcrm-recipients__rule-table thead {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+
+	.nowcrm-recipients__rule-table,
+	.nowcrm-recipients__rule-table tbody,
+	.nowcrm-recipients__rule-table tr,
+	.nowcrm-recipients__rule-table td {
+		display: block;
+		width: auto;
+	}
+
+	.nowcrm-recipients__rule-table {
+		border: 0;
+		border-radius: 0;
+	}
+
+	.nowcrm-recipients__rule-table tbody tr:not(.nowcrm-recipients__rule-note) {
+		height: auto;
+		margin-bottom: 8px;
+		padding: 10px 12px;
+		border: 1px solid #e1e4ea;
+		border-radius: 8px;
+	}
+
+	.nowcrm-recipients__rule-table td {
+		padding: 4px 0;
+		border-top: 0;
+		text-align: left;
+	}
+
+	.nowcrm-recipients__rule-table td::before {
+		display: block;
+		margin-bottom: 2px;
+		color: #525866;
+		font-size: 13px;
+		font-weight: 500;
+		content: attr(data-label);
+	}
+
+	.nowcrm-recipients__rule-table td:last-child {
+		width: auto;
+	}
+
+	.nowcrm-recipients__rule-table td.nowcrm-recipients__rule-action {
+		padding-top: 6px;
+	}
+
+	.nowcrm-recipients__rule-table td.nowcrm-recipients__rule-action::before,
+	.nowcrm-recipients__rule-table .nowcrm-recipients__rule-note td::before {
+		content: none;
+	}
+
+	.nowcrm-recipients__rule-table .nowcrm-recipients__rule-note td {
+		padding: 0;
+	}
+}
+
+.nowcrm-recipients__modal {
+	width: min(640px, 95vw);
+}
+
+.nowcrm-recipients__pager {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 12px;
+	margin-top: 12px;
+}
+
+.nowcrm-workspace__choices legend {
+	font-weight: 600;
+}
+
+.nowcrm-workspace__choices {
+	display: grid;
+	gap: 8px;
+}
+
+.nowcrm-workspace__choices legend {
+	padding-bottom: 8px;
+}
+
+.nowcrm-workspace__summary {
+	display: grid;
+	grid-template-columns: max-content minmax(0, 1fr);
+	gap: 10px 16px;
+}
+
+.nowcrm-workspace__summary dd,
+.nowcrm-workspace__stats dd {
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-workspace__stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+	gap: 16px;
+}
+
+.nowcrm-workspace__stats > div {
+	padding-top: 10px;
+	border-top: 1px solid #e5e5e5;
+}
+
+.nowcrm-workspace__stats dd {
+	font-size: 22px;
+	font-weight: 600;
+}
+
+.nowcrm-workspace__stats small {
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.nowcrm-workspace progress {
+	width: 100%;
+	accent-color: #1a1a1a;
+}
+
+.nowcrm-workspace__message {
+	padding: 10px 12px;
+	border: 1px solid #e5e5e5;
+	border-left: 3px solid #1a1a1a;
+	background: #fff;
+}
+
+.nowcrm-workspace .button-primary,
+.components-modal__frame .nowcrm-workspace__actions .button-primary {
+	border-color: #1a1a1a;
+	background: #1a1a1a;
+	color: #fff;
+}
+
+.nowcrm-preview-modal {
+	width: min(840px, 95vw);
+}
+
+.nowcrm-preview-modal iframe {
+	display: block;
+	width: 100%;
+	height: min(65vh, 640px);
+	margin: 14px auto 0;
+	border: 1px solid #e5e5e5;
+}
+
+.nowcrm-preview-modal .nowcrm-preview--mobile {
+	width: min(100%, 375px);
+}
+
+@media (max-width: 600px) {
+	.nowcrm-workspace__panel {
+		padding: 14px;
+	}
+
+	.nowcrm-workspace__steps button {
+		padding-inline: 9px;
+	}
+}
+
+.nowcrm-workspace__review-preview iframe {
+	display: block;
+	width: 100%;
+	height: 350px;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+}
+
+.nowcrm-workspace .widefat td {
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-workspace .widefat caption {
+	margin: 12px 0;
+	text-align: left;
+	font-weight: 600;
+}
+
+.nowcrm-workspace__frame {
+	position: relative;
+	margin-block: 10px 12px;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+	overflow: hidden;
+	background: #fff;
+}
+
+/* The email editor should occupy about three quarters of the screen and end
+   at the bottom edge, so it needs a real editing surface instead of a strip. */
+.nowcrm-workspace__frame-editor {
+	display: block;
+	width: 100%;
+	height: clamp(640px, 90vh, 1400px);
+	border: 0;
+}
+
+.nowcrm-workspace__frame-status {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-content: center;
+	gap: 12px;
+	margin: 0;
+	background: #f9f9f9;
+	text-align: center;
+}
+
+.nowcrm-preview-modal__status {
+	margin: 14px 0 0;
+}

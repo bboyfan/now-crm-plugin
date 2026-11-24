@@ -1,0 +1,288 @@
+/* Overview and reports: use the Contacts surfaces and the same text hierarchy. */
+.nowcrm-wrap.nowcrm-analytics {
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-analytics .nowcrm-contacts__head {
+	align-items: center;
+	gap: 12px;
+}
+
+.nowcrm-analytics .nowcrm-contacts__head h1 {
+	padding: 0;
+	font-size: 23px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.nowcrm-analytics :is(.nowcrm-contacts__toolbar, .nowcrm-contacts-filters, .nowcrm-analytics__filter-fields) .button {
+	box-sizing: border-box;
+	border-color: var(--nowcrm-line);
+	border-radius: 4px;
+	background: var(--nowcrm-surface);
+	color: var(--nowcrm-ink);
+	box-shadow: none;
+}
+
+.nowcrm-analytics .nowcrm-contacts__toolbar .button {
+	min-height: 36px;
+	padding-inline: 12px;
+	line-height: 34px;
+}
+
+.nowcrm-analytics :is(.nowcrm-contacts__toolbar, .nowcrm-contacts-filters, .nowcrm-analytics__filter-fields) .button:hover {
+	background: var(--nowcrm-canvas);
+}
+
+.nowcrm-analytics :is(.nowcrm-contacts__toolbar, .nowcrm-contacts-filters) .button-primary,
+.nowcrm-analytics .nowcrm-analytics__filter-fields .button[aria-current="true"] {
+	border-color: var(--nowcrm-ink);
+	background: var(--nowcrm-ink);
+	color: var(--nowcrm-surface);
+}
+
+.nowcrm-analytics :is(.nowcrm-contacts__toolbar, .nowcrm-contacts-filters) .button-primary:hover {
+	background: #303333;
+}
+
+.nowcrm-analytics .nowcrm-analytics__filter-fields .button {
+	min-height: 32px;
+	line-height: 30px;
+}
+
+.nowcrm-analytics .nowcrm-analytics__filter-fields .button[aria-current="true"]:hover {
+	background: #303333;
+}
+
+.nowcrm-analytics a:not(.button, .nowcrm-contact-tabs__item) {
+	color: var(--nowcrm-ink);
+	text-underline-offset: 0.18em;
+}
+
+.nowcrm-analytics a:not(.button, .nowcrm-contact-tabs__item):hover {
+	text-decoration: underline;
+}
+
+.nowcrm-analytics :is(a, button, summary, input, select, [tabindex]):focus-visible {
+	outline: 2px solid var(--nowcrm-ink);
+	outline-offset: 2px;
+	box-shadow: none;
+}
+
+.nowcrm-analytics__intro,
+.nowcrm-analytics__subtle,
+.nowcrm-analytics .description,
+.nowcrm-analytics__list small {
+	color: var(--nowcrm-muted);
+}
+
+.nowcrm-analytics__intro {
+	margin: 4px 0 0;
+}
+
+.nowcrm-analytics__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+	gap: 16px;
+	margin-block: 16px;
+}
+
+.nowcrm-analytics__grid--split {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.nowcrm-analytics__card {
+	min-width: 0;
+	margin-block: 16px;
+	padding: 16px;
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 4px;
+	background: var(--nowcrm-surface);
+}
+
+.nowcrm-analytics__grid > .nowcrm-analytics__card {
+	margin: 0;
+}
+
+.nowcrm-analytics__card-head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 8px 12px;
+	margin-bottom: 12px;
+}
+
+.nowcrm-analytics__card-head :is(h2, h3),
+.nowcrm-analytics__card > h2 {
+	margin: 0;
+	color: var(--nowcrm-ink);
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.nowcrm-analytics__metrics {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 132px), 1fr));
+	gap: 8px;
+	margin: 12px 0;
+}
+
+.nowcrm-analytics__metrics > * {
+	display: flex;
+	min-width: 0;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 4px;
+	margin: 0;
+	padding: 10px 12px;
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 4px;
+	background: var(--nowcrm-canvas);
+	text-decoration: none;
+}
+
+.nowcrm-analytics__metrics > a:hover {
+	border-color: var(--nowcrm-muted);
+}
+
+.nowcrm-analytics__metrics span {
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.nowcrm-analytics__metrics strong {
+	color: var(--nowcrm-ink);
+	font-size: 22px;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	line-height: 1.2;
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-analytics__list,
+.nowcrm-analytics__list ul {
+	margin: 0;
+}
+
+.nowcrm-analytics__list li {
+	display: flex;
+	min-height: 24px;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 4px 12px;
+	margin: 0;
+	padding: 7px 0;
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-analytics__list li + li {
+	border-top: 1px solid var(--nowcrm-line);
+}
+
+.nowcrm-analytics__list small {
+	display: block;
+}
+
+.nowcrm-analytics .nowcrm-contacts-filters {
+	align-items: flex-end;
+	row-gap: 8px;
+}
+
+.nowcrm-analytics__filter-fields {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 8px 12px;
+}
+
+.nowcrm-analytics__filter-field {
+	display: grid;
+	gap: 4px;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	font-weight: 500;
+}
+
+/* Without :has(), both custom date inputs remain available in the form. */
+@supports selector(:has(*)) {
+	#nowcrm-report-filters:not(:has(select[name="compare"] option[value="custom"]:checked))
+		.nowcrm-analytics__filter-field:has(input[name="compare_from"], input[name="compare_to"]) {
+		display: none;
+	}
+}
+
+.nowcrm-analytics .nowcrm-contacts-filters :is(input, select) {
+	box-sizing: border-box;
+	min-height: 32px;
+	max-width: 100%;
+	margin: 0;
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 4px;
+	background-color: var(--nowcrm-surface);
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-analytics .nowcrm-contacts-surface {
+	max-width: 100%;
+}
+
+.nowcrm-analytics .nowcrm-contacts-table {
+	font-variant-numeric: tabular-nums;
+}
+
+.nowcrm-analytics__trend {
+	margin: 12px 0;
+}
+
+.nowcrm-analytics__plot {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-height: 240px;
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-analytics__trend-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 16px;
+	margin-block: 8px;
+	color: var(--nowcrm-ink);
+	font-size: 12px;
+}
+
+.nowcrm-analytics__trend-legend li {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin: 0;
+}
+
+.nowcrm-analytics__trend-data {
+	margin-top: 12px;
+}
+
+.nowcrm-analytics__trend-data summary {
+	width: fit-content;
+	min-height: 32px;
+	cursor: pointer;
+	line-height: 32px;
+}
+
+@media (max-width: 782px) {
+	.nowcrm-analytics__grid--split {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.nowcrm-analytics__card {
+		padding: 12px;
+	}
+
+	.nowcrm-analytics .nowcrm-contacts-filters :is(input, select, .button),
+	.nowcrm-analytics .nowcrm-analytics__filter-fields .button {
+		min-height: 36px;
+	}
+}

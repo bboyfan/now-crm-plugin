@@ -1,0 +1,811 @@
+/* Lists and tags — dense Executive Monochrome table, dialogs, and bulk bar. */
+
+.nowcrm-terms-page {
+	--nowcrm-terms-radius: 4px;
+}
+
+.nowcrm-terms-page [hidden] {
+	display: none !important;
+}
+
+/* Header: title, more menu, primary create. */
+
+.nowcrm-terms-page .nowcrm-terms__head {
+	position: relative;
+	z-index: 40;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin: 12px 0 0;
+}
+
+.nowcrm-terms-page .nowcrm-terms__heading {
+	display: flex;
+	align-items: baseline;
+	gap: 8px;
+	min-width: 0;
+}
+
+.nowcrm-terms-page .nowcrm-terms__heading h1 {
+	margin: 0;
+	padding: 0;
+	color: var(--nowcrm-ink);
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	line-height: 32px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__count {
+	color: var(--nowcrm-muted);
+	font-size: 14px;
+	font-variant-numeric: tabular-nums;
+}
+
+.nowcrm-terms-page .nowcrm-terms__toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__toolbar .button {
+	display: inline-flex;
+	align-items: center;
+	height: 32px;
+	min-height: 32px;
+	padding: 0 14px;
+	border-radius: var(--nowcrm-terms-radius);
+	box-shadow: none;
+	font-size: 13px;
+	line-height: 30px;
+	text-shadow: none;
+}
+
+.nowcrm-terms-page .nowcrm-terms__toolbar .button:not(.button-primary) {
+	background: var(--nowcrm-surface);
+	border: 1px solid var(--nowcrm-line);
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-terms-page .nowcrm-terms__toolbar .button:not(.button-primary):hover {
+	background: #f5f5f5;
+	border-color: var(--nowcrm-line);
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-terms-page .nowcrm-terms__toolbar .button-primary {
+	background: var(--nowcrm-ink);
+	border: 1px solid var(--nowcrm-ink);
+	color: #ffffff;
+}
+
+.nowcrm-terms-page .nowcrm-terms__toolbar .button-primary:hover {
+	background: #333333;
+	border-color: #333333;
+	color: #ffffff;
+}
+
+.nowcrm-terms-page .nowcrm-terms__toolbar .button-primary:focus {
+	border-color: var(--nowcrm-ink);
+	box-shadow: 0 0 0 1px #ffffff, 0 0 0 2px var(--nowcrm-ink);
+	outline: 2px solid transparent;
+}
+
+.nowcrm-terms-page .nowcrm-terms__more-trigger {
+	list-style: none;
+	cursor: pointer;
+}
+
+.nowcrm-terms-page .nowcrm-terms__more-trigger::-webkit-details-marker {
+	display: none;
+}
+
+.nowcrm-terms-page .nowcrm-terms__menu {
+	z-index: 1000;
+}
+
+/* Search row. */
+
+.nowcrm-terms-page .nowcrm-terms__filters {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin: 12px 0;
+}
+
+.nowcrm-terms-page .nowcrm-terms__search {
+	display: flex;
+	flex: 1 1 320px;
+	align-items: center;
+	gap: 6px;
+	min-width: 0;
+}
+
+.nowcrm-terms-page .nowcrm-terms__search input[type="search"] {
+	flex: 1 1 auto;
+	min-width: 120px;
+	height: 32px;
+	margin: 0;
+	padding: 0 10px;
+	background: var(--nowcrm-surface);
+	border: 1px solid var(--nowcrm-line);
+	border-radius: var(--nowcrm-terms-radius);
+	box-shadow: none;
+	color: var(--nowcrm-ink);
+	font-size: 14px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__search input[type="search"]:focus {
+	border-color: var(--nowcrm-ink);
+	box-shadow: 0 0 0 1px var(--nowcrm-ink);
+	outline: 0;
+}
+
+.nowcrm-terms-page .nowcrm-terms__filters .button {
+	height: 32px;
+	min-height: 32px;
+	padding: 0 12px;
+	background: var(--nowcrm-surface);
+	border: 1px solid var(--nowcrm-line);
+	border-radius: var(--nowcrm-terms-radius);
+	color: var(--nowcrm-ink);
+	font-size: 13px;
+	line-height: 30px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__filters .button:hover {
+	background: #f5f5f5;
+}
+
+.nowcrm-terms-page .nowcrm-terms__clear {
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.nowcrm-terms-page .nowcrm-terms__clear:hover {
+	color: var(--nowcrm-ink);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+/* Table. */
+
+.nowcrm-terms-page .nowcrm-terms__surface {
+	margin: 0 0 8px;
+	background: var(--nowcrm-surface);
+	border: 1px solid var(--nowcrm-line);
+	border-radius: var(--nowcrm-terms-radius);
+}
+
+.nowcrm-terms-page .nowcrm-terms__table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+	color: var(--nowcrm-ink);
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__table th,
+.nowcrm-terms-page .nowcrm-terms__table td {
+	padding: 9px 12px;
+	border: 0;
+	border-bottom: 1px solid #ededed;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.nowcrm-terms-page .nowcrm-terms__table thead th {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: var(--nowcrm-surface);
+	color: var(--nowcrm-muted);
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	line-height: 16px;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.nowcrm-terms-page .nowcrm-terms__table thead th a {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	color: inherit;
+	text-decoration: none;
+}
+
+.nowcrm-terms-page .nowcrm-terms__table thead th a:hover {
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-terms-page .nowcrm-terms__table tbody tr {
+	transition: background-color var(--nowcrm-duration-hover) ease;
+}
+
+.nowcrm-terms-page .nowcrm-terms__table tbody tr:hover {
+	background: #f5f5f5;
+}
+
+.nowcrm-terms-page .nowcrm-terms__table tbody tr:last-child th,
+.nowcrm-terms-page .nowcrm-terms__table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.nowcrm-terms-page .nowcrm-terms__check {
+	width: 38px;
+	padding-right: 0;
+	text-align: center;
+}
+
+.nowcrm-terms-page .nowcrm-terms__check input[type="checkbox"] {
+	width: 14px;
+	height: 14px;
+	margin: 0;
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 2px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__check input[type="checkbox"]:checked {
+	background: var(--nowcrm-ink);
+	border-color: var(--nowcrm-ink);
+}
+
+.nowcrm-terms-page .nowcrm-terms__check input[type="checkbox"]:checked::before {
+	color: #ffffff;
+}
+
+.nowcrm-terms-page .nowcrm-terms__col-id {
+	width: 72px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__col-count {
+	width: 132px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__col-created {
+	width: 148px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__col-actions {
+	width: 56px;
+	text-align: right;
+}
+
+.nowcrm-terms-page .nowcrm-terms__id {
+	color: var(--nowcrm-muted);
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 12px;
+	font-variant-numeric: tabular-nums;
+}
+
+.nowcrm-terms-page .nowcrm-terms__title {
+	min-width: 0;
+}
+
+.nowcrm-terms-page .nowcrm-terms__title-link {
+	display: inline-block;
+	max-width: 100%;
+	overflow: hidden;
+	color: var(--nowcrm-ink);
+	font-weight: 500;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	vertical-align: bottom;
+	white-space: nowrap;
+}
+
+.nowcrm-terms-page .nowcrm-terms__title-link:hover {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__title-link:focus-visible {
+	outline: 2px solid var(--nowcrm-ink);
+	outline-offset: 2px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 2px 8px;
+	margin-top: 2px;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__slug {
+	padding: 0;
+	background: none;
+	color: var(--nowcrm-muted);
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 11px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__description {
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.nowcrm-terms-page .nowcrm-terms__count-cell,
+.nowcrm-terms-page .nowcrm-terms__created {
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+
+.nowcrm-terms-page .nowcrm-terms__count-cell a {
+	color: var(--nowcrm-ink);
+	text-decoration: none;
+}
+
+.nowcrm-terms-page .nowcrm-terms__count-cell a:hover {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__sep {
+	color: var(--nowcrm-muted);
+}
+
+.nowcrm-terms-page .nowcrm-terms__created {
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__sort {
+	color: #a3a3a3;
+	font-size: 10px;
+	letter-spacing: 0;
+}
+
+/* Row actions. */
+
+.nowcrm-terms-page .nowcrm-terms__col-actions .nowcrm-more {
+	display: inline-block;
+}
+
+.nowcrm-terms-page .nowcrm-terms__row-trigger {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border: 1px solid transparent;
+	border-radius: var(--nowcrm-terms-radius);
+	color: var(--nowcrm-muted);
+	list-style: none;
+	cursor: pointer;
+}
+
+.nowcrm-terms-page .nowcrm-terms__row-trigger::-webkit-details-marker {
+	display: none;
+}
+
+.nowcrm-terms-page .nowcrm-terms__row-trigger .dashicons {
+	width: 18px;
+	height: 18px;
+	font-size: 18px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__row-trigger:hover,
+.nowcrm-terms-page .nowcrm-terms__row-more[open] .nowcrm-terms__row-trigger {
+	background: #f5f5f5;
+	border-color: var(--nowcrm-line);
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-terms-page .nowcrm-terms__row-menu {
+	z-index: 50;
+	min-width: 148px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__row-menu form {
+	margin: 0;
+}
+
+.nowcrm-terms-page .nowcrm-terms__row-menu .nowcrm-more__button {
+	width: 100%;
+}
+
+.nowcrm-terms-page .nowcrm-terms__danger,
+.nowcrm-terms-page .nowcrm-terms__row-menu .nowcrm-terms__danger {
+	border-color: #e5b8b8;
+	color: #b32d2e;
+}
+
+.nowcrm-terms-page .nowcrm-terms__danger:hover,
+.nowcrm-terms-page .nowcrm-terms__row-menu .nowcrm-terms__danger:hover {
+	background: #fcf0f0;
+	border-color: #d9a0a0;
+	color: #8a1f20;
+}
+
+/* Empty states. */
+
+.nowcrm-terms-page .nowcrm-terms__empty {
+	padding: 32px 16px;
+	color: var(--nowcrm-muted);
+	text-align: center;
+}
+
+.nowcrm-terms-page .nowcrm-terms__empty p {
+	margin: 0 0 12px;
+	font-size: 14px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__empty p:last-child {
+	margin-bottom: 0;
+}
+
+.nowcrm-terms-page .nowcrm-terms__empty-actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 8px;
+}
+
+/* Footer: range, page sizes, pagination. */
+
+.nowcrm-terms-page .nowcrm-terms__footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px 16px;
+	padding: 2px 2px 12px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__summary {
+	margin: 0;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	font-variant-numeric: tabular-nums;
+}
+
+.nowcrm-terms-page .nowcrm-terms__page-sizes,
+.nowcrm-terms-page .nowcrm-terms__pagination {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 2px;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__page-size,
+.nowcrm-terms-page .nowcrm-terms__pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 26px;
+	height: 26px;
+	padding: 0 6px;
+	border: 1px solid transparent;
+	border-radius: var(--nowcrm-terms-radius);
+	color: var(--nowcrm-ink);
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.nowcrm-terms-page .nowcrm-terms__page-size:hover,
+.nowcrm-terms-page .nowcrm-terms__pagination .page-numbers:hover {
+	background: #f5f5f5;
+	border-color: var(--nowcrm-line);
+}
+
+.nowcrm-terms-page .nowcrm-terms__page-size.is-active,
+.nowcrm-terms-page .nowcrm-terms__pagination .page-numbers.current {
+	background: var(--nowcrm-ink);
+	border-color: var(--nowcrm-ink);
+	color: #ffffff;
+}
+
+.nowcrm-terms-page .nowcrm-terms__pagination .page-numbers.dots {
+	border-color: transparent;
+}
+
+/* Contextual bulk bar. */
+
+.nowcrm-terms-page .nowcrm-terms__bulk {
+	position: fixed;
+	right: 24px;
+	bottom: 24px;
+	left: 184px;
+	z-index: 100;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 14px;
+	background: var(--nowcrm-surface);
+	border: 1px solid #d4d4d4;
+	border-radius: var(--nowcrm-terms-radius);
+	box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.nowcrm-terms-page .nowcrm-terms__selection {
+	flex: 1 1 auto;
+	color: var(--nowcrm-ink);
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.nowcrm-terms-page .nowcrm-terms__bulk .button {
+	height: 32px;
+	min-height: 32px;
+	padding: 0 12px;
+	background: var(--nowcrm-surface);
+	border: 1px solid var(--nowcrm-line);
+	border-radius: var(--nowcrm-terms-radius);
+	color: var(--nowcrm-ink);
+	font-size: 13px;
+	line-height: 30px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__bulk .button:hover {
+	background: #f5f5f5;
+}
+
+.nowcrm-terms-page .nowcrm-terms__bulk .button:disabled {
+	border-color: var(--nowcrm-line);
+	color: #a3a3a3;
+	cursor: default;
+}
+
+.nowcrm-terms-page .nowcrm-terms__bulk .nowcrm-terms__danger:not(:disabled) {
+	border-color: #e5b8b8;
+	color: #b32d2e;
+}
+
+/* Dialogs. */
+
+.nowcrm-terms-page .nowcrm-terms__dialog {
+	width: min(520px, calc(100vw - 32px));
+	max-height: calc(100vh - 48px);
+	padding: 0;
+	overflow: auto;
+	background: var(--nowcrm-surface);
+	border: 1px solid #d4d4d4;
+	border-radius: var(--nowcrm-terms-radius);
+	box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog--import {
+	width: min(460px, calc(100vw - 32px));
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog::backdrop {
+	background: rgba(0, 0, 0, 0.25);
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog form {
+	margin: 0;
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 14px 16px;
+	border-bottom: 1px solid var(--nowcrm-line);
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog-head h2 {
+	margin: 0;
+	padding: 0;
+	color: var(--nowcrm-ink);
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: -0.015em;
+	line-height: 24px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog-close {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	background: none;
+	border: 1px solid transparent;
+	border-radius: var(--nowcrm-terms-radius);
+	color: var(--nowcrm-muted);
+	cursor: pointer;
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog-close:hover {
+	background: #f5f5f5;
+	border-color: var(--nowcrm-line);
+	color: var(--nowcrm-ink);
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog-body {
+	padding: 16px;
+	overflow-y: auto;
+}
+
+.nowcrm-terms-page .nowcrm-terms__field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin: 0 0 14px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__field > span {
+	color: var(--nowcrm-ink);
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 16px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__field input[type="text"],
+.nowcrm-terms-page .nowcrm-terms__field input[type="file"],
+.nowcrm-terms-page .nowcrm-terms__field textarea {
+	width: 100%;
+	min-height: 34px;
+	margin: 0;
+	padding: 6px 10px;
+	background: var(--nowcrm-surface);
+	border: 1px solid var(--nowcrm-line);
+	border-radius: var(--nowcrm-terms-radius);
+	box-shadow: none;
+	color: var(--nowcrm-ink);
+	font-size: 14px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__field textarea {
+	min-height: 74px;
+	resize: vertical;
+}
+
+.nowcrm-terms-page .nowcrm-terms__field input:focus,
+.nowcrm-terms-page .nowcrm-terms__field textarea:focus {
+	border-color: var(--nowcrm-ink);
+	box-shadow: 0 0 0 1px var(--nowcrm-ink);
+	outline: 0;
+}
+
+.nowcrm-terms-page .nowcrm-terms__field input[aria-invalid="true"],
+.nowcrm-terms-page .nowcrm-terms__field textarea[aria-invalid="true"] {
+	border-color: #ba1a1a;
+}
+
+.nowcrm-terms-page .nowcrm-terms__hint {
+	margin: -6px 0 14px;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__error {
+	margin: 0 0 14px;
+	padding: 8px 10px;
+	background: #ffdad6;
+	border: 1px solid #f0c8cb;
+	border-radius: var(--nowcrm-terms-radius);
+	color: #93000a;
+	font-size: 13px;
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog-foot {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	padding: 12px 16px;
+	border-top: 1px solid var(--nowcrm-line);
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog-foot .button {
+	display: inline-flex;
+	align-items: center;
+	height: 32px;
+	min-height: 32px;
+	padding: 0 14px;
+	background: var(--nowcrm-surface);
+	border: 1px solid var(--nowcrm-line);
+	border-radius: var(--nowcrm-terms-radius);
+	color: var(--nowcrm-ink);
+	font-size: 13px;
+	line-height: 30px;
+	text-decoration: none;
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog-foot .button:hover {
+	background: #f5f5f5;
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog-foot .button-primary {
+	background: var(--nowcrm-ink);
+	border-color: var(--nowcrm-ink);
+	color: #ffffff;
+}
+
+.nowcrm-terms-page .nowcrm-terms__dialog-foot .button-primary:hover {
+	background: #333333;
+	border-color: #333333;
+	color: #ffffff;
+}
+
+/* Responsive. */
+
+@media (max-width: 960px) {
+	.nowcrm-terms-page .nowcrm-terms__bulk {
+		left: 24px;
+	}
+}
+
+@media (max-width: 782px) {
+	.nowcrm-terms-page .nowcrm-terms__head {
+		align-items: flex-start;
+	}
+
+	.nowcrm-terms-page .nowcrm-terms__heading,
+	.nowcrm-terms-page .nowcrm-terms__toolbar {
+		width: 100%;
+	}
+
+	.nowcrm-terms-page .nowcrm-terms__toolbar .button {
+		flex: 1 1 auto;
+		justify-content: center;
+		height: 36px;
+		min-height: 36px;
+		line-height: 34px;
+	}
+
+	.nowcrm-terms-page .nowcrm-terms__search {
+		flex-basis: 100%;
+	}
+
+	.nowcrm-terms-page .nowcrm-terms__table th,
+	.nowcrm-terms-page .nowcrm-terms__table td {
+		padding: 8px;
+	}
+
+	.nowcrm-terms-page .nowcrm-terms__col-id {
+		width: 56px;
+	}
+
+	.nowcrm-terms-page .nowcrm-terms__col-count {
+		width: 96px;
+	}
+
+	.nowcrm-terms-page .nowcrm-terms__col-created {
+		display: none;
+	}
+
+	.nowcrm-terms-page .nowcrm-terms__col-actions {
+		width: 44px;
+	}
+
+	.nowcrm-terms-page .nowcrm-terms__row-menu {
+		position: static;
+		right: auto;
+		min-width: 0;
+		margin-top: 4px;
+		box-shadow: none;
+	}
+
+	.nowcrm-terms-page .nowcrm-terms__bulk {
+		right: 12px;
+		bottom: 12px;
+		left: 12px;
+	}
+
+	.nowcrm-terms-page .nowcrm-terms__dialog {
+		width: calc(100vw - 16px);
+	}
+}

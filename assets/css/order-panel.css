@@ -1,0 +1,143 @@
+/* NOW CRM contact panel on the WooCommerce order screen (side metabox). */
+
+.nowcrm-order-panel {
+	padding: 0;
+}
+
+.nowcrm-order-panel__identity {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	min-width: 0;
+}
+
+.nowcrm-order-panel .nowcrm-order-panel__avatar {
+	width: 40px;
+	height: 40px;
+	font-size: 12px;
+}
+
+.nowcrm-order-panel__identity-text {
+	min-width: 0;
+}
+
+.nowcrm-order-panel__name {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-order-panel__name a {
+	color: var(--nowcrm-ink);
+	text-decoration: none;
+}
+
+.nowcrm-order-panel__name a:hover {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.nowcrm-order-panel__email {
+	margin: 2px 0 0;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	line-height: 16px;
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-order-panel__status {
+	margin: 10px 0 0;
+}
+
+.nowcrm-order-panel__stats {
+	margin: 12px 0 0;
+	padding: 10px 0 0;
+	border-top: 1px solid var(--nowcrm-line);
+}
+
+.nowcrm-order-panel__stats > div {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 8px;
+	padding: 2px 0;
+}
+
+.nowcrm-order-panel__stats dt {
+	margin: 0;
+	color: var(--nowcrm-muted);
+	font-size: 11px;
+	line-height: 16px;
+}
+
+.nowcrm-order-panel__stats dd {
+	margin: 0;
+	color: var(--nowcrm-ink);
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 16px;
+	font-variant-numeric: tabular-nums;
+	overflow-wrap: anywhere;
+	text-align: right;
+}
+
+.nowcrm-order-panel__meta {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 8px;
+	margin: 10px 0 0;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.nowcrm-order-panel__meta strong {
+	color: var(--nowcrm-ink);
+	font-weight: 600;
+}
+
+.nowcrm-order-panel__terms {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+	margin: 8px 0 0;
+}
+
+.nowcrm-order-panel__terms-label {
+	flex: 0 0 auto;
+	color: var(--nowcrm-muted);
+	font-size: 11px;
+	line-height: 16px;
+}
+
+.nowcrm-order-panel__chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	min-width: 0;
+}
+
+.nowcrm-order-panel__notice {
+	margin: 10px 0 0;
+	padding: 8px 10px;
+	background: var(--nowcrm-canvas);
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 4px;
+	color: var(--nowcrm-muted);
+	font-size: 11px;
+	line-height: 15px;
+}
+
+.nowcrm-order-panel__action-row {
+	margin: 12px 0 0;
+}
+
+.nowcrm-order-panel__action {
+	display: block;
+	width: 100%;
+	text-align: center;
+}

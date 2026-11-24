@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+	PHPUnit 9.6 is the version the WordPress test suite supports (the suite calls
+	PHPUnit\Util\Test, removed in PHPUnit 10+). See docs/testing.md.
+-->
+<phpunit
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+	bootstrap="tests/bootstrap.php"
+	colors="true"
+	beStrictAboutTestsThatDoNotTestAnything="true"
+	failOnWarning="true"
+	failOnRisky="true"
+	cacheResultFile=".phpunit.result.cache"
+>
+	<testsuites>
+		<testsuite name="now-crm">
+			<directory suffix="Test.php">tests/phpunit</directory>
+		</testsuite>
+	</testsuites>
+	<coverage>
+		<include>
+			<file>now-crm.php</file>
+			<directory suffix=".php">includes</directory>
+		</include>
+	</coverage>
+</phpunit>

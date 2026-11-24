@@ -1,0 +1,321 @@
+/* Abandoned-cart admin: list snapshot, detail, and settings. Scoped to .nowcrm-cart. */
+
+/* Shared: page head and scope note */
+
+.nowcrm-wrap .nowcrm-cart__head {
+	align-items: flex-start;
+}
+
+.nowcrm-wrap .nowcrm-cart__heading {
+	min-width: 0;
+}
+
+.nowcrm-wrap .nowcrm-cart__scope {
+	margin: 2px 0 0;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	line-height: 16px;
+}
+
+/* List: seven status snapshot cells */
+
+.nowcrm-wrap .nowcrm-cart-snapshot__note {
+	margin: 0 0 10px;
+}
+
+.nowcrm-wrap .nowcrm-cart-snapshot__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(136px, 1fr));
+	gap: 8px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nowcrm-wrap .nowcrm-cart-snapshot__cell {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	min-height: 58px;
+	padding: 8px 10px;
+	background: var(--nowcrm-canvas);
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 4px;
+	color: var(--nowcrm-ink);
+	text-decoration: none;
+}
+
+.nowcrm-wrap .nowcrm-cart-snapshot__cell:hover {
+	background: #f5f5f5;
+}
+
+.nowcrm-wrap .nowcrm-cart-snapshot__cell[aria-current="page"] {
+	background: var(--nowcrm-ink);
+	border-color: var(--nowcrm-ink);
+	color: #ffffff;
+}
+
+.nowcrm-wrap .nowcrm-cart-snapshot__label {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.nowcrm-wrap .nowcrm-cart-snapshot__count {
+	color: inherit;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+	font-variant-numeric: tabular-nums;
+}
+
+/* List: visible filter labels and exact-match hint */
+
+.nowcrm-wrap .nowcrm-cart-filters {
+	align-items: flex-end;
+}
+
+.nowcrm-wrap .nowcrm-cart-field {
+	display: flex;
+	flex: 1 1 220px;
+	flex-direction: column;
+	gap: 4px;
+	min-width: 0;
+}
+
+.nowcrm-wrap .nowcrm-cart-field label {
+	color: var(--nowcrm-ink);
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.nowcrm-wrap .nowcrm-cart-field select,
+.nowcrm-wrap .nowcrm-cart-field input[type="email"] {
+	height: 32px;
+	min-height: 32px;
+	max-width: 320px;
+	margin: 0;
+	padding: 0 10px;
+	background: var(--nowcrm-surface);
+	border: 1px solid var(--nowcrm-line);
+	border-radius: 4px;
+	color: var(--nowcrm-ink);
+	font-size: 13px;
+}
+
+.nowcrm-wrap .nowcrm-cart-field select {
+	max-width: 190px;
+}
+
+.nowcrm-wrap .nowcrm-cart-field select:focus,
+.nowcrm-wrap .nowcrm-cart-field input[type="email"]:focus {
+	border-color: var(--nowcrm-ink);
+	box-shadow: 0 0 0 1px var(--nowcrm-ink);
+	outline: 0;
+}
+
+.nowcrm-wrap .nowcrm-cart-field__hint {
+	margin: 0;
+	color: var(--nowcrm-muted);
+	font-size: 11px;
+	line-height: 15px;
+}
+
+.nowcrm-wrap .nowcrm-cart-filter-actions {
+	display: flex;
+	flex: 0 0 auto;
+	gap: 8px;
+	align-items: center;
+}
+
+/* List: table scroll region (the pager stays outside it) */
+
+.nowcrm-wrap .nowcrm-cart__surface {
+	overflow: visible;
+}
+
+.nowcrm-wrap .nowcrm-cart-table-scroll {
+	overflow-x: auto;
+}
+
+.nowcrm-wrap .nowcrm-cart-table-scroll:focus-visible {
+	outline: 2px solid var(--nowcrm-ink);
+	outline-offset: -2px;
+}
+
+.nowcrm-wrap .nowcrm-cart-col-email {
+	min-width: 220px;
+}
+
+.nowcrm-wrap .nowcrm-cart-email {
+	min-width: 180px;
+	max-width: 320px;
+	overflow-wrap: anywhere;
+}
+
+/* Detail: breadcrumb, header, and two-column body */
+
+.nowcrm-wrap .nowcrm-cart-crumbs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	align-items: center;
+	margin: 4px 0 12px;
+	color: var(--nowcrm-muted);
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.nowcrm-wrap .nowcrm-cart-crumbs a {
+	color: var(--nowcrm-ink);
+	text-decoration: none;
+}
+
+.nowcrm-wrap .nowcrm-cart-crumbs a:hover {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.nowcrm-wrap .nowcrm-cart-crumbs__sep {
+	color: var(--nowcrm-muted);
+}
+
+.nowcrm-wrap .nowcrm-cart-detail__head {
+	align-items: flex-start;
+	margin-bottom: 4px;
+}
+
+.nowcrm-wrap .nowcrm-cart-detail__identity {
+	min-width: 0;
+}
+
+.nowcrm-wrap .nowcrm-cart-detail__email {
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-wrap .nowcrm-cart-detail__summary {
+	justify-content: flex-end;
+}
+
+.nowcrm-wrap .nowcrm-cart-items {
+	min-width: 0;
+}
+
+.nowcrm-wrap .nowcrm-cart-items th,
+.nowcrm-wrap .nowcrm-cart-items td {
+	overflow-wrap: anywhere;
+}
+
+.nowcrm-wrap .nowcrm-cart-side .nowcrm-meta strong a {
+	overflow-wrap: anywhere;
+}
+
+/* Settings: jump links, grouped fields, and stacked mobile labels */
+
+.nowcrm-wrap .nowcrm-cart-settings__head {
+	margin: 0 0 8px;
+}
+
+.nowcrm-wrap .nowcrm-cart-settings__head h1 {
+	margin: 0 0 4px;
+}
+
+.nowcrm-wrap .nowcrm-cart-settings__head .description {
+	margin: 0;
+}
+
+.nowcrm-wrap .nowcrm-cart-jump {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 14px;
+	margin: 0 0 8px;
+	padding: 8px 0;
+	border-bottom: 1px solid var(--nowcrm-line);
+	font-size: 12px;
+}
+
+.nowcrm-wrap .nowcrm-cart-jump a {
+	color: var(--nowcrm-muted);
+	text-decoration: none;
+}
+
+.nowcrm-wrap .nowcrm-cart-jump a:hover {
+	color: var(--nowcrm-ink);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.nowcrm-wrap .nowcrm-cart-group {
+	min-width: 0;
+	margin: 0 0 8px;
+	padding: 0;
+	border: 0;
+}
+
+.nowcrm-wrap .nowcrm-cart-group legend {
+	padding: 12px 0 0;
+	color: var(--nowcrm-muted);
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.nowcrm-wrap .nowcrm-cart-group .form-table {
+	margin-top: 0;
+}
+
+.nowcrm-wrap .nowcrm-cart-settings .form-table th {
+	width: 220px;
+	padding-left: 0;
+	font-weight: 500;
+}
+
+.nowcrm-wrap .nowcrm-cart-settings .form-table td {
+	padding-right: 0;
+}
+
+.nowcrm-wrap .nowcrm-cart-settings .form-table input[type="number"] {
+	width: 120px;
+}
+
+.nowcrm-wrap .nowcrm-cart-check {
+	display: inline-flex;
+	gap: 6px;
+	align-items: flex-start;
+}
+
+.nowcrm-wrap .nowcrm-cart-template p {
+	max-width: 760px;
+}
+
+@media (max-width: 782px) {
+	.nowcrm-wrap .nowcrm-cart-field input[type="email"],
+	.nowcrm-wrap .nowcrm-cart-field select {
+		max-width: none;
+	}
+
+	.nowcrm-wrap .nowcrm-cart-filter-actions {
+		width: 100%;
+	}
+
+	.nowcrm-wrap .nowcrm-cart-detail__summary {
+		justify-content: flex-start;
+	}
+
+	.nowcrm-wrap .nowcrm-cart-settings .form-table th,
+	.nowcrm-wrap .nowcrm-cart-settings .form-table td {
+		display: block;
+		width: auto;
+		padding: 0;
+	}
+
+	.nowcrm-wrap .nowcrm-cart-settings .form-table th {
+		padding-top: 12px;
+	}
+
+	.nowcrm-wrap .nowcrm-cart-settings .form-table input[type="number"] {
+		width: 100%;
+		max-width: 240px;
+	}
+}

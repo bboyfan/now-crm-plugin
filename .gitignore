@@ -1,0 +1,22 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+wp-tests-config.php
+
+# Dependencies and build output
+vendor/
+node_modules/
+dist/
+*.zip
+.phpunit.result.cache
+.phpunit.cache/
+
+# Local test harness artefacts
+tests/.php-tests/
+tmp/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

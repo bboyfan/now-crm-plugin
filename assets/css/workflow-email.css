@@ -1,0 +1,109 @@
+/* Shared email tools: template picker, preview dialog and template frame. */
+.nowcrm-workflow-tools {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 12px;
+	margin: 12px 0;
+	padding: 10px 12px;
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	background: #f6f7f7;
+}
+
+.nowcrm-workflow-tools__picker,
+.nowcrm-workflow-tools__actions,
+.nowcrm-workflow-tools__select {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+}
+
+.nowcrm-workflow-tools__select span {
+	font-weight: 600;
+}
+
+.nowcrm-workflow-tools__status {
+	flex-basis: 100%;
+	min-height: 1.4em;
+	margin: 0;
+	color: #1e7b34;
+}
+
+.nowcrm-workflow-tools__status.is-error {
+	color: #b32d2e;
+}
+
+.nowcrm-workflow-preview {
+	width: min( 900px, 92vw );
+	max-height: 92vh;
+	padding: 0;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+	background: #fff;
+}
+
+.nowcrm-workflow-preview::backdrop {
+	background: rgba( 0, 0, 0, 0.55 );
+}
+
+.nowcrm-workflow-preview__bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 10px 12px;
+	border-bottom: 1px solid #dcdcde;
+	background: #f6f7f7;
+}
+
+.nowcrm-workflow-preview__bar strong {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.nowcrm-workflow-preview iframe {
+	display: block;
+	width: 100%;
+	height: 70vh;
+	border: 0;
+	background: #fff;
+}
+
+.nowcrm-template-frame {
+	display: block;
+	width: 100%;
+	height: 70vh;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	background: #fff;
+}
+
+[data-workflow-email="automation"] .nowcrm-step-content__label {
+	display: block;
+	margin: 0 0 6px;
+	font-weight: 600;
+}
+
+[data-workflow-email="automation"] .nowcrm-step-content__frame {
+	margin: 0 0 8px;
+}
+
+[data-workflow-email="automation"] .nowcrm-step-content__frame iframe {
+	display: block;
+	width: 100%;
+	height: 70vh;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	background: #fff;
+}
+
+[data-workflow-email="automation"] .nowcrm-step-content__status {
+	margin: 0 0 8px;
+}
+
+[data-workflow-email="automation"] .nowcrm-step-content__status.is-error {
+	color: #b32d2e;
+}
