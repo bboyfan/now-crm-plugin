@@ -4,7 +4,7 @@ Tags: crm, contacts, email marketing, marketing automation, customer data
 Requires at least: 6.7
 Tested up to: 7.1
 Requires PHP: 8.3
-Stable tag: 1.0.0-rc.4
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,8 +13,6 @@ Self-hosted CRM for WordPress and WooCommerce: contacts, lists, tags, campaigns,
 == Description ==
 
 NOW CRM is a self-hosted contact relationship manager. It uses WordPress and WooCommerce APIs. It does not call a hosted CRM at runtime.
-
-This is release candidate 1.0.0-rc.4 for review and testing. It is not a stable release. No directory review has been completed.
 
 = Contacts and lists =
 
@@ -88,7 +86,7 @@ Build the browser assets and the installable ZIP from a clean checkout:
 2. Run `npm run build`.
 3. Run `bash bin/build-zip.sh`.
 
-The build writes `dist/now-crm-1.0.0-rc.4.zip`. The ZIP has one top-level folder named `now-crm/`. It contains runtime files only: the plugin PHP file, readme, license, PHP includes, in-use CSS and JavaScript, and the built browser assets.
+The build writes `dist/now-crm-1.1.zip`. The ZIP has one top-level folder named `now-crm/`. It contains runtime files only: the plugin PHP file, readme, license, PHP includes, in-use CSS and JavaScript, and the built browser assets.
 
 Tests and local fixtures are not part of the plugin ZIP. The repository documents their preparation.
 
@@ -198,7 +196,7 @@ This plugin uses an external service only when the site operator enables or conf
 
 == Changelog ==
 
-= 1.0.0-rc.4 =
+= 1.1 =
 * Prepare the public release package: public README, complete GPLv2 license, and explicit external services disclosure.
 * Use the neutral customer list name "Customers" for new installs. Reuse an existing customer list on upgrade without rename or duplicate.
 * Ship runtime files only in the plugin ZIP. The build fails when a required browser asset is missing.
@@ -218,5 +216,5 @@ This plugin uses an external service only when the site operator enables or conf
 
 == Upgrade Notice ==
 
-= 1.0.0-rc.4 =
-Release candidate for public review. Back up the database before you upgrade. Existing customer lists and saved settings are kept.
+= 1.1 =
+Back up the database before you upgrade. Existing customer lists and saved settings are kept.

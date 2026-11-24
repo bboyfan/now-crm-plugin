@@ -3,7 +3,7 @@
  * Plugin Name:       NOW CRM
  * Plugin URI:        https://github.com/bboyfan/now-crm-plugin
  * Description:       A self-hosted CRM for WordPress and WooCommerce: contacts, lists, tags, campaigns, automation, and abandoned-cart email. WooCommerce is optional.
- * Version:           1.0.0-rc.4
+ * Version:           1.1
  * Requires at least: 6.7
  * Requires PHP:      8.3
  * Author:            WENSZU
@@ -19,7 +19,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'NOWCRM_VERSION', '1.0.0-rc.4' );
+define( 'NOWCRM_VERSION', '1.1' );
 define( 'NOWCRM_FILE', __FILE__ );
 define( 'NOWCRM_DIR', __DIR__ );
 

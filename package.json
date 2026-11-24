@@ -1,6 +1,6 @@
 {
 	"name": "now-crm",
-	"version": "1.0.0-rc.4",
+	"version": "1.1.0",
 	"private": true,
 	"description": "Browser build tooling for the NOW CRM WordPress plugin.",
 	"license": "GPL-2.0-or-later",

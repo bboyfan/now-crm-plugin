@@ -6,7 +6,7 @@ WooCommerce is optional. Without WooCommerce, contact, list, campaign, and form 
 
 ## Project status
 
-`1.0.0-rc.4` is a release candidate for testing and WordPress.org review. It is not a stable release or a WordPress.org listing.
+The current version is `1.1`. NOW CRM is not yet listed on WordPress.org.
 
 The admin interface and most project documentation are in Traditional Chinese. This release does not promise an English admin interface.
 
@@ -81,7 +81,7 @@ npm run build
 bash bin/build-zip.sh
 ```
 
-The build writes `dist/now-crm-1.0.0-rc.4.zip`. The ZIP has one top-level folder named `now-crm/` and contains runtime files only.
+The build writes `dist/now-crm-1.1.zip`. The ZIP has one top-level folder named `now-crm/` and contains runtime files only.
 
 ### In WordPress
 
