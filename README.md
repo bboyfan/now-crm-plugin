@@ -1,77 +1,35 @@
 # NOW CRM
 
-NOW CRM is a self-hosted contact relationship manager for WordPress and WooCommerce. It stores contacts, lists, tags, segments, campaigns, automations, forms, and abandoned-cart activity in your own WordPress database. It does not call a hosted CRM at runtime and it sends no telemetry.
+NOW CRM 是一款自架式 WordPress CRM 外掛。你可以在同一個後台管理聯絡人、寄送電子報、建立自動化流程與表單。啟用 WooCommerce 後，也能同步訂單、寄送購物車提醒信。
 
-WooCommerce is optional. Without WooCommerce, contact, list, campaign, and form features still work.
+CRM 資料儲存在自己的 WordPress 資料庫，不必另外申請雲端 CRM 帳號。外掛不會把使用統計或聯絡人資料回傳給開發者。**目前版號為 `1.1`。**
 
-## Project status
+## 主要功能
 
-The current version is `1.1`. NOW CRM is not yet listed on WordPress.org.
+| 功能 | 可以做什麼 |
+| --- | --- |
+| 聯絡人管理 | 用名單、標籤與分眾整理聯絡人。支援 CSV 匯入、自訂欄位、備註與狀態歷程。 |
+| 電子報 | 用 WordPress 區塊編輯器或自訂 HTML 編寫郵件，支援預覽、測試信、排程與定期寄送。 |
+| 範本、序列與自動化 | 重複使用郵件範本、安排多封信的寄送順序，或依事件觸發流程。 |
+| 表單與訂閱 | 建立表單、收集填答，並設定雙重確認訂閱（double opt-in）與一鍵退訂。 |
+| WooCommerce 訂單同步 | 依帳單電子郵件地址連結訂單與聯絡人。支援傳統訂單儲存與高效能訂單儲存（HPOS）。 |
+| 放棄購物車提醒 | 可針對放棄結帳的購物車寄送提醒信。顧客可透過有期限的連結還原購物車；提醒信內容在自動化的 Email 步驟編輯。 |
+| 寄送紀錄與整合 | 透過佇列控管寄送與重試。可選用 Amazon SES／SNS 回報寄送事件，或用 Webhook 與其他系統交換資料。 |
 
-The admin interface and most project documentation are in Traditional Chinese. This release does not promise an English admin interface.
+## 系統需求
 
-## Features
+| 項目 | 需求 |
+| --- | --- |
+| WordPress | 6.7 以上 |
+| PHP | 8.3 以上 |
+| WooCommerce | 8.0 以上，僅訂單同步與購物車功能需要 |
+| 郵件傳輸 | 寄送實際郵件時，站台需有可用的 WordPress 郵件傳輸方式 |
 
-### Contacts and organization
+沒有安裝 WooCommerce，仍可使用聯絡人、電子報、自動化與表單。Node.js 和 npm 只在從原始碼建置時需要，安裝外掛 ZIP 的站台不需要。
 
-- One contact record with normalized email, profile fields, source, WordPress user link, and status history.
-- Seven statuses: `subscribed`, `pending`, `unsubscribed`, `transactional`, `bounced`, `complained`, and `spammed`.
-- Lists, tags, segments, custom fields, notes, and CSV import.
-- Contact search, filters, bulk actions, and a detail screen with order and email history.
-- WordPress personal data exporter.
+## 安裝與開始使用
 
-### WooCommerce
-
-- Order sync through WooCommerce CRUD, with support for high-performance order storage (HPOS) and the legacy order table.
-- New orders, order updates, billing email changes, status changes, refunds, and deletes update the contact and order link.
-- Customer lists for WooCommerce contacts. New installs use `Customers`; upgrades reuse the existing list.
-- Optional checkout subscription checkbox with Classic and block checkout support.
-- Optional double opt-in for the lists that require it.
-- Read-only order panel on the WooCommerce order screen.
-
-### Email and campaigns
-
-- Persistent email queue with a unique job key, claim, lease, retry, and a pre-send eligibility check.
-- Campaigns with the block editor or raw HTML, preview, test send, scheduling, pause, resume, and cancel.
-- Recurring campaigns, templates, sequences, and automations.
-- Signed unsubscribe links. The database stores only a hash, and one-click POST is supported.
-- Optional open and click tracking with signed tokens. Tracking is a site setting and a per-campaign setting. Fresh installs keep it off.
-- Reports for queue state, campaigns, carts, and engagement.
-
-### Forms and cart recovery
-
-- Native forms with nonce, honeypot, rate limit, validation, entry storage, and double opt-in handoff.
-- Abandoned-cart capture on Classic and block checkout. The browser script runs only when capture is enabled.
-- One reminder by default, a signed restore link, a lost-cart window, and a cooldown.
-- The restore link checks products, variations, stock, and coupons before it changes the cart. A failed restore keeps the current cart.
-- The plugin sets no tracking cookie of its own for cart capture. It uses the WooCommerce session.
-
-### Delivery events and integrations
-
-- Optional Amazon SES event handling through Amazon SNS. Topic allowlist and SNS signature verification run before any event is applied.
-- Hard bounces and complaints can suppress an address. Transient bounces do not permanently block it.
-- Outbound webhooks with HMAC signatures, bounded retries, and a delivery log.
-- Inbound contact and handler webhooks with scoped keys.
-- Application Password based API keys for REST access by users who hold a NOW CRM capability.
-- WP-CLI commands under `wp nowcrm`.
-
-## Requirements
-
-| Component | Version |
-|---|---|
-| PHP | 8.3 or later |
-| WordPress | 6.7 or later |
-| WooCommerce | 8.0 or later for order and cart features; optional |
-| Node.js | Only to build browser assets from source |
-| Mail | A working WordPress mail transport for real email |
-
-The installable ZIP includes built browser assets. A site that installs the ZIP does not need Node.js.
-
-## Install
-
-### From a clean Git checkout
-
-Clone the source, then build the browser assets and installable ZIP.
+先從原始碼建置安裝 ZIP。請勿直接把 GitHub 的 **Download ZIP** 當成外掛安裝檔。
 
 ```bash
 git clone https://github.com/bboyfan/now-crm-plugin.git
@@ -81,75 +39,30 @@ npm run build
 bash bin/build-zip.sh
 ```
 
-The build writes `dist/now-crm-1.1.zip`. The ZIP has one top-level folder named `now-crm/` and contains runtime files only.
+1. 在 WordPress 後台開啟 **外掛 → 安裝外掛 → 上傳外掛**。
+2. 上傳建置產生的 `dist/now-crm-1.1.zip`，安裝並啟用。
+3. 開啟 **NOW CRM** 選單。可以先新增一位聯絡人、建立名單，再到 **電子報** 預覽草稿。
 
-### In WordPress
+啟用時只會建立必要的資料表、預設設定與權限。全新安裝預設不會同步 WooCommerce 訂單、自動將新顧客設為已訂閱、寄送實際郵件、擷取放棄購物車資料或追蹤電子報開信與點擊。
 
-1. Open **Plugins → Add New Plugin → Upload Plugin**.
-2. Select the ZIP file and install it.
-3. Activate NOW CRM.
-4. Open the **NOW CRM** menu and enable the features that you need.
+想先測試寄信流程時，可把郵件傳輸設為 **Capture（只寫入本機紀錄，不寄出）**。要正式寄送時，請先確認站台的郵件傳輸可用。`wp_mail()` 回傳成功只表示郵件交給了傳輸系統，不代表已送達收件匣。
 
-You can also copy the plugin folder to `wp-content/plugins/` and activate it from the Plugins screen.
+## 資料、隱私與第三方服務
 
-## First run
+- **資料儲存與保留：** 聯絡人、訂單關聯、郵件事件、購物車摘要及表單填答都儲存在站台資料庫。支援 WordPress 個人資料匯出，以及透過 `wp nowcrm email retention` 管理歷史郵件內容的保留。停用或刪除外掛不會自動刪除 CRM 資料。
+- **顧客訂閱：** 可選擇在 WooCommerce 結帳頁顯示「訂閱電子報」選項。同步訂單不會變更既有聯絡人的訂閱狀態，匯入舊資料也不等於取得新的行銷同意。
+- **購物車與郵件追蹤：** 啟用購物車擷取後，外掛可在訂單送出前記錄結帳電子郵件地址與購物車內容。啟用相關功能前，請依站台的隱私告知和同意流程處理。郵件服務可能預先載入追蹤像素，因此開信數不等於實際閱讀人數。
+- **外部連線：** 郵件由站台設定的傳輸方式寄出；Amazon SES／SNS 和 Webhook 均須另外設定。各項服務的用途、啟用條件、資料項目與適用政策，請見 [`readme.txt`](readme.txt) 的 **External Services**。
 
-Activation creates the plugin tables, default settings, and capabilities. It does not import data, sync orders, or send email.
+外掛提供訂閱、退訂與追蹤控制，不保證符合法規；站台經營者仍須決定如何取得同意、告知用途與保留資料。
 
-A fresh install keeps these features off:
+## 搬移既有資料
 
-- WooCommerce order sync
-- Automatic subscription of new WooCommerce contacts
-- Real email sending
-- Abandoned-cart capture
-- Campaign open and click tracking
+可透過 WP-CLI 從 FluentCRM 唯讀匯入聯絡人、名單與標籤，也能補齊 WooCommerce 歷史訂單關聯。啟用外掛不會觸發匯入。請先備份，並在測試站執行 `--dry-run` 核對結果，再套用到正式站。操作步驟見[維運與匯入手冊](docs/operations.md)。
 
-The checkout subscription checkbox is off. Lists that require double opt-in still require a confirmation before marketing email.
+## 開發與測試
 
-Before you enable real sending, configure a mail transport for WordPress. The plugin does not include an SMTP account, a mail provider, or AWS credentials.
-
-Use the `capture` email transport for local checks. It stores a bounded local copy of each message and does not send it.
-
-## WooCommerce and consent
-
-The plugin gives the site operator controls. It does not decide whether a consent process is legally sufficient.
-
-- WooCommerce order sync finds a contact by the normalized billing email. It creates a contact only when none exists.
-- Sync never changes the status of an existing contact. A new contact gets a status from the auto-subscribe setting and the saved checkout choice.
-- New contacts from WooCommerce are added to the customer list. The list name comes from the `nowcrm_customer_list_name` filter when that filter is set. Without the filter, an upgrade reuses the existing customer list and a fresh install uses `Customers`.
-- The checkout checkbox is off by default. A saved yes can start double opt-in when the list policy requires it. A saved no is not a marketing subscription.
-- Automatic WooCommerce sync does not resubscribe an unsubscribed, bounced, complained, or spammed contact.
-- Abandoned-cart email is limited to `subscribed` and `transactional` contacts.
-- Open and click tracking, cart capture, and smart link click counts are optional. Enable them only when your privacy notice and consent process allow it.
-- Unsubscribe and suppression records survive sync and import.
-
-## Data and privacy
-
-NOW CRM stores its data in the WordPress database. The tables can contain contact details, order links, list and tag membership, email jobs and events, cart snapshots, form entries, SES event receipts, and suppressions.
-
-The plugin does not send data to the plugin author. It has no hosted backend, no telemetry, and no remote CRM.
-
-The WordPress personal data exporter includes the contact profile, custom fields, memberships, status history, order links, email metadata and engagement events, carts, form entries, SES receipts, and suppressions. The `wp nowcrm email retention` command previews or applies retention of historical email payloads.
-
-Deactivation and uninstall keep the plugin tables and options. Delete data separately if your policy requires it.
-
-### External services
-
-The plugin uses the site's configured mail transport. Optional integrations accept Amazon SES events through Amazon SNS, send signed webhooks to endpoints you configure, or receive data through scoped inbound URLs. See the External Services section of [`readme.txt`](readme.txt) for connection triggers, data categories, and provider policies.
-
-## Limits
-
-- `wp_mail()` returning true means the mail stack accepted the message. It does not prove delivery.
-- Open pixels can be fetched by mailbox providers. Treat opens as a weak signal, not proof that a person read the message.
-- If a worker stops during a send, the queue can mark the job `unknown`. The plugin does not resend it automatically.
-- If WP-Cron is disabled, use a system cron job or the Action Scheduler runner.
-- Cart restore can fail when a cart contains third-party item data, an unavailable variation, or no stock. The plugin then keeps the current cart.
-
-## Development
-
-### Browser assets
-
-Browser source is in `src/` and builds with `@wordpress/scripts`:
+前端原始碼在 `src/`，使用 `@wordpress/scripts` 建置。修改前端原始碼後，請重新建置並一併提交 `assets/build/` 的變更。
 
 ```bash
 npm ci
@@ -158,39 +71,16 @@ npm run test:unit
 npm run build
 ```
 
-`assets/build/` is committed so a site can install the ZIP without Node.js. Run `npm run build` again after you change `src/`.
+PHP 測試需另外準備 WordPress 測試程式庫、WooCommerce、PHPUnit、Docker 環境及可銷毀的測試資料庫。執行 `tests/bin/run-tests.sh` 前，請先依[測試指南](docs/testing.md)準備環境。資料模型、寄送佇列與 Multisite 支援範圍見[架構說明](docs/architecture.md)。
 
-### PHP tests
+## 問題回報與貢獻
 
-The PHPUnit suite uses the WordPress test library, WooCommerce, PHPUnit 9.6, the Yoast PHPUnit Polyfills, and a disposable database. Those items are not in this repository.
+- 一般問題、功能建議請開 [GitHub Issue](https://github.com/bboyfan/now-crm-plugin/issues)。回報問題時，請附上 NOW CRM、WordPress、PHP 與 WooCommerce 版本（如有），以及重現步驟和預期結果。
+- 發現安全問題時，請透過 [GitHub 私密漏洞回報](https://github.com/bboyfan/now-crm-plugin/security/advisories/new)，不要發在公開 Issue。請勿在公開回報中貼出客戶資料、電子郵件地址或金鑰。
+- 歡迎透過 Pull Request 提交修正。請說明修改原因與驗證方式。
 
-A prepared development environment can run:
+## 授權
 
-```bash
-tests/bin/run-tests.sh
-tests/bin/run-tests.sh --hpos
-tests/bin/run-tests.sh --multisite
-tests/bin/run-tests.sh --filter WooSyncTest
-```
-
-`tests/bin/run-tests.sh` is not standalone. It expects a WordPress installation, WooCommerce, the test library, the PHPUnit PHAR, a Docker network, and a disposable database supplied by the development environment. Environment variables can override the defaults. See [`docs/testing.md`](docs/testing.md) for the fixture list and safety rules.
-
-## Documentation
-
-- [`docs/architecture.md`](docs/architecture.md): layers, data model, queue, security boundaries, Multisite scope, and known limits.
-- [`docs/testing.md`](docs/testing.md): test fixtures, test commands, and safety rules.
-- [`docs/operations.md`](docs/operations.md): import, SES, and WooCommerce handoff procedures.
-
-## Support
-
-Use [GitHub Issues](https://github.com/bboyfan/now-crm-plugin/issues) for bugs and feature requests.
-
-Include the WordPress version, WooCommerce version, PHP version, and the steps that reproduce the problem. Do not include customer data, email addresses, API keys, or webhook secrets.
-
-## License
-
-NOW CRM is free software under the GNU General Public License, version 2 or later (GPL-2.0-or-later).
+NOW CRM 採 **GPL-2.0-or-later** 授權。詳見 [`LICENSE`](LICENSE)。
 
 Copyright (C) 2026 WENSZU.
-
-See [`LICENSE`](LICENSE) for the full license text.
